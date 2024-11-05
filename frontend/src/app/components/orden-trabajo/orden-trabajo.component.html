@@ -1,0 +1,44 @@
+<section class="orden-trabajo-container">
+  <div class="header">
+    <div class="back-arrow" (click)="goBack()">
+      <img src="../../../assets/arrow.png" alt="Back">
+    </div>
+    <div class="header-text">
+      <h2>Orden de Trabajo de Mantenimiento</h2>
+      <p># {{ ordenTrabajo.id }}</p>
+    </div>
+  </div>
+  
+  <div class="detalle-tarea">
+    <div class="text-detalle-tarea">
+      <h3>{{ ordenTrabajo.nombre }}</h3>
+      <p class="fecha">{{ ordenTrabajo.fecha }}</p>
+    </div>
+    <div class="info">
+      <div>
+        <strong>Solicitante: </strong> {{ ordenTrabajo.solicitante }}
+      </div>
+      <div>
+        <strong>Edificio: </strong> {{ ordenTrabajo.edificio }}
+      </div>
+      <div>
+        <strong>Piso/Nivel: </strong> {{ ordenTrabajo.piso }}
+      </div>
+      <div>
+        <strong>Sector: </strong> {{ ordenTrabajo.sector }}
+      </div>
+      <div>
+        <strong>Tipo de Activo: </strong> {{ ordenTrabajo.tipoActivo }}
+      </div>
+      <div>
+        <strong>Estado de la Tarea: </strong> <span class="estado-pendiente"> Pendiente</span>
+      </div>
+    </div>
+    <h4>Instrucciones de la Tarea</h4>
+    <textarea placeholder="Llevar escalera, foco nuevo y destornillador">{{ ordenTrabajo.instrucciones }}</textarea>
+
+    <button class="finalizar-button">Finalizar Tarea</button>
+  </div>
+</section>
+
+  

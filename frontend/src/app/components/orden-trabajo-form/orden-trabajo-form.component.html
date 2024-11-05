@@ -1,0 +1,55 @@
+<section class="generar-orden-container">
+  <div class="form-header">
+    <div class="back-arrow" (click)="goBack()">
+      <img src="../../../assets/arrow.png" alt="Back">
+    </div>
+    <div class="form-title">
+      <h2>Generar Orden de Trabajo</h2>
+      <p>Complete los siguientes datos para solicitar el trabajo</p>
+    </div>
+  </div>
+
+  <div class="form-body">
+    <div class="form-group">
+      <label for="edificio">Edificio:</label>
+      <select id="edificio" class="form-control" [(ngModel)]="ordenTrabajo.edificio" (change)="onEdificioChange($event)">
+        <option value="">Seleccione un edificio</option>
+        <option *ngFor="let edificio of getUniqueEdificios()" [value]="edificio.id">{{ edificio.nombre }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="piso">Piso/Nivel:</label>
+      <select id="piso" class="form-control" [(ngModel)]="ordenTrabajo.piso" (change)="onPisoChange($event)">
+        <option value="">Seleccione un piso o nivel</option>
+        <option *ngFor="let piso of getUniquePisos()" [value]="piso.id">{{ piso.piso }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="sector">Sector:</label>
+      <select id="sector" class="form-control" [(ngModel)]="ordenTrabajo.sector" (change)="onSectorChange($event)">
+        <option value="">Seleccione un sector</option>
+        <option *ngFor="let sector of getUniqueSectores()" [value]="sector.id">{{ sector.sector }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="ubicacion">Ubicación:</label>
+      <select id="ubicacion" class="form-control" [(ngModel)]="ordenTrabajo.ubicacion" (change)="onUbicacionChange($event)">
+        <option value="">Seleccione una ubicación</option>
+        <option *ngFor="let ubicacion of getUniqueUbicaciones()" [value]="ubicacion.id">{{ ubicacion.ubicacion }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoActivo">Tipo de Activo:</label>
+      <select id="tipoActivo" class="form-control" [(ngModel)]="ordenTrabajo.activo" (change)="onActivoChange($event)">
+        <option value="">Seleccione un tipo de activo</option>
+        <option *ngFor="let activo of getUniqueActivos()" [value]="activo.id">{{ activo.tipo }}</option>
+      </select>
+    </div>
+
+    <button class="submit-button" (click)="enviarSolicitud()">Enviar Solicitud</button>
+  </div>
+</section>

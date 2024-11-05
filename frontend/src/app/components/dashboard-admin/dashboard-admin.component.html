@@ -1,0 +1,53 @@
+<section class="orden-trabajo-container">
+    <div class="header">
+        <div class="back-arrow" (click)="goBack()">
+            <img src="../../../assets/arrow.png" alt="Back">
+        </div>
+        <div class="header-text">
+            <h2>Panel de Control - Administrador</h2>
+        </div>
+    </div>
+
+    <div class="card-principal">
+        <div class="text-card-principal">
+            <h3>¡Hola!</h3>
+            <p>¿En qué podemos ayudarte?</p>
+        </div>
+
+        <button class="solicitar-button" (click)="navigateToSolicitud()">Solicitar Mantenimiento</button>
+        <button class="registrar-button" (click)="navigateToRegistro()">Registrar Usuario</button>
+    </div>
+
+    <div class="card-secundario">
+        <div class="text-card-secundario">
+            <p>Mis solicitudes</p>
+        </div>
+
+        <div class="solicitud-item" (click)="navigateToOT()">
+            <div class="solicitud-info">
+                <p class="solicitud-title">Cambio de foco</p>
+                <small>Aula 17</small>
+            </div>
+            <span class="solicitud-id">#00001</span>
+        </div>
+
+        <div class="solicitud-item" (click)="navigateToOT()">
+            <div class="solicitud-info">
+                <p class="solicitud-title">Cerradura rota</p>
+                <small>Aula 5</small>
+            </div>
+            <span class="solicitud-id">#00002</span>
+        </div>
+
+        <div class="solicitud-item" (click)="navigateToOT()">
+            <div class="solicitud-info">
+                <p class="solicitud-title">No funciona toma corriente</p>
+                <small>Administración</small>
+            </div>
+            <span class="solicitud-id">#00003</span>
+        </div>
+    </div>
+</section>
+
+  
+
