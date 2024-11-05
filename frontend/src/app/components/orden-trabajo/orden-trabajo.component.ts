@@ -27,7 +27,7 @@ export class OrdenTrabajoDetalleComponent implements OnInit {
   }
 
   obtenerOrdenTrabajo(id: number) {
-    this.ordenTrabajoService.obtenerOrdenPorId(id).then((data) => {
+    this.ordenTrabajoService.getOrdenTrabajo(id).then((data) => {
       this.ordenTrabajo = data;
     });
   }
