@@ -1,27 +1,30 @@
-# Front
+# Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
 
-## Development server
+# Documentacion
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Seleccionar un perfil para ingersar
+![Login](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/1-login.png)
 
-## Code scaffolding
+- Ingresar usuario y contraseña
+![Login](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/2-login.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Panel de control operario
+![Panel de control operario](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/4-panel-operario.png)
 
-## Build
+- Panel de control administrador
+![Panel de control administrador](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/5-panel-admin.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1- Solicitar orden de trabajo
+![Solicitar OT](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/7-generar-orden-trabajo.png)
 
-## Running unit tests
+2- Registrar usuario
+![Registro](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/8-registro.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3- Ver el historial de ordenes de trabajo
+![Historial](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/9-historial.png)
 
-## Running end-to-end tests
+4- Visualizar la orden de trabajo
+![Ver OT](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/6-orden-trabajo.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
