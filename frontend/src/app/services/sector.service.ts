@@ -5,9 +5,11 @@ import { Sector } from '../interfaces/sector';
   providedIn: 'root'
 })
 export class SectorService {
+
   private apiUrl = 'http://localhost:3000/api/sectores'; 
 
-  
+  constructor() {}
+
   async crearSector(sector: Sector): Promise<Sector> {
     const response = await fetch(this.apiUrl, {
       method: 'POST',
@@ -42,4 +44,3 @@ export class SectorService {
     return await response.json();
   }
 }
-

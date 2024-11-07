@@ -1,4 +1,5 @@
 export interface ActivoTarea {
-    activo_id: number;
-    tarea_id: number;
+    id_tarea: string; 
+    tipo: string; 
+    tarea: string; 
 }

@@ -26,6 +26,10 @@ export class DashboardAdminComponent {
   navigateToRegistro() {
     this.router.navigate(['/registro']);
   }
+
+  navigateToHistorial() {
+    this.router.navigate(['/historial']);
+  }
 }
 
 

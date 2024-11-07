@@ -1,15 +1,15 @@
 <section class="login-form-container">
-  <div class="login-form-content">
-    <div class="container-header-image">
-      <div class="back-arrow" (click)="goBack()">
-        <img src="../../../assets/arrow.png" alt="Back">
+    <div class="login-form-content">
+      <div class="container-header-image">
+        <div class="back-arrow" (click)="goBack()">
+          <img src="../../../assets/arrow.png" alt="Back">
+        </div>
+        <img src="../../../assets/frvt.jpg" alt="Header Image" class="header-image">
       </div>
-      <img src="../../../assets/frvt.jpg" alt="Header Image" class="header-image">
-    </div>
-    <h1>Registro de Usuario</h1>
-    <h3>Sistema de Gestión de Mantenimiento FRVT</h3>
-
-    <label for="username">Nombre</label>
+      <h1>Registro de Usuario</h1>
+      <h3>Sistema de Gestion de Mantenimiento FRVT</h3>
+  
+      <label for="username">Nombre</label>
     <input id="username" type="text" [(ngModel)]="username" placeholder="Ingrese su Nombre">
     <label for="apellido">Apellido</label>
     <input id="apellido" type="text" [(ngModel)]="apellido" placeholder="Ingrese su apellido">
@@ -30,4 +30,4 @@
       {{ errorMessage }}
     </div>
   </div>
-</section>
+  </section>

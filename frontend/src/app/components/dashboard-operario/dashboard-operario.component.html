@@ -1,34 +1,36 @@
 <section class="orden-trabajo-container">
-  <div class="header">
-    <div class="back-arrow" (click)="goBack()">
-      <img src="../../../assets/arrow.png" alt="Back">
-    </div>
-    <div class="header-text">
-      <h2>Panel de Control - Operario</h2>
-    </div>
-  </div>
-
-  <div class="card-principal">
-    <div class="text-card-principal">
-      <h3>¡Hola!</h3>
-      <p>Revisa tus Ordenes de Trabajo pendientes</p>
-    </div>
-  </div>
-
-  <div class="card-secundario">
-    <div class="text-card-secundario">
-      <p>Mis Ordenes de Trabajo</p>
-    </div>
-
-    
-    <div *ngFor="let orden of ordenesTrabajo" class="solicitud-item" (click)="navigateToOT(orden.id)">
-      <div class="solicitud-info">
-        <p class="solicitud-title">{{ orden || 'Nombre de la Tarea' }}</p>
-        <small>{{ orden.sector }} - {{ orden.piso }}</small>
+    <div class="header">
+      <div class="back-arrow" (click)="goBack()">
+        <img src="../../../assets/arrow.png" alt="Back">
       </div>
-      <span class="solicitud-id">#{{ orden }}</span>
+      <div class="header-text">
+        <h2>Panel de Control - Operario</h2>
+      </div>
     </div>
     
-  </div>
-</section>
+    <div class="card-principal">
+      <div class="text-card-principal">
+        <h3>¡Hola!</h3>
+        <p>Revisa tus Ordenes de Trabajo pendientes</p>
+      </div>
+    </div>
+
+      <div class="card-secundario">
+        <div class="text-card-secundario">
+          <p>Mis Ordenes de Trabajo</p>
+        </div>
+      
+        <div *ngFor="let orden of ordenesTrabajo" class="solicitud-item" (click)="navigateToOT(orden.id)">
+          <div class="solicitud-info">
+            <p class="solicitud-title">{{ orden || 'Nombre de la Tarea' }}</p>
+            <small>{{ orden.sector }} - {{ orden.piso }}</small>
+          </div>
+          <span class="solicitud-id">#{{ orden }}</span>
+        </div>
+        
+      </div>
+      
+  </section>
+  
+
 

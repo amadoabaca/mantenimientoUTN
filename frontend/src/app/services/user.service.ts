@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
+
   private apiUrl = 'http://localhost:3000/api'; 
 
-  
+  constructor() { }
+
   async obtenerOperarios(): Promise<User[]> {
     const response = await fetch(`${this.apiUrl}/lista-usuarios`);
     if (!response.ok) {
@@ -47,4 +51,5 @@ export class UserService {
     }
     return response.json();
   }
+
 }

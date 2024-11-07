@@ -6,8 +6,8 @@ import { OrdenTrabajo } from '../interfaces/orden-trabajo';
 })
 export class OrdenTrabajoService {
   private apiUrl = 'http://localhost:3000/api/orden-trabajo';
+  constructor() { }
 
-  
   async crearOrdenTrabajo(orden: OrdenTrabajo): Promise<OrdenTrabajo> {
     const response = await fetch(this.apiUrl, {
       method: 'POST',
@@ -17,12 +17,17 @@ export class OrdenTrabajoService {
       body: JSON.stringify(orden),
     });
 
-    if (!response.ok) {
-      const errorResponse = await response.json();
-      throw new Error(errorResponse.error);
-    }
+    const result = await response.json();
 
-    return await response.json();
+    if (response.ok) {
+      console.log('Orden de trabajo creada:', result);
+      alert(`Orden de trabajo creada con ID: ${result.id}`);
+      return result; 
+    } else {
+      console.error('Error al crear la orden:', result);
+      alert(`Error: ${result.error}`);
+      throw new Error(result.error); 
+    }
   }
 
   

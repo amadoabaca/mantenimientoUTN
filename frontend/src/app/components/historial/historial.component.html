@@ -1,0 +1,39 @@
+<section class="container">
+    <div class="header">
+      <div class="back-arrow" (click)="goBack()">
+        <img src="../../../assets/arrow.png" alt="Back">
+      </div>
+      <div class="header-text">
+        <h2>Historial Ordenes de Trabajo</h2>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="text-card">
+        <h3>Buscar ordenes</h3>
+        <input class="busqueda" placeholder="Activo o Sector" type="text">
+        <button class="boton-busqueda">Buscar</button>
+      </div>
+    </div>
+
+    <div class="card">
+        <div class="text-card">
+          <h3>Ordenes de Trabajo</h3>
+        </div>
+
+        <div *ngIf="ordenesCargadas">
+          <div class="solicitud-item" *ngFor="let orden of listaOrdenes">
+            <div class="solicitud-info">
+              <p class="solicitud-title">{{orden.activo}}</p>
+              <small>{{orden.ubicacion}}</small>
+            </div>
+            <span class="solicitud-id">{{orden.id}}</span>
+          </div>
+        </div>
+
+      </div>
+      
+  </section>
+  
+
+

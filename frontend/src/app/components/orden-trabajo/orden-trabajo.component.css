@@ -1,44 +1,45 @@
 .orden-trabajo-container {
   background-color: #EFF3F5;
   border-radius: 10px;
-  max-width: 800px; /* Aumentado para pantallas de PC */
-  margin: 30px auto; /* Añadido margen superior e inferior */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
+  width: 90%; 
+  max-width: 800px; 
+  height: auto;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px; /* Añadido padding interno */
+  padding: 20px;
 }
 
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 16px; /* Aumentado para mejor legibilidad */
-  padding: 15px;
-  margin-top: 10px; /* Menor margen superior */
+  justify-content: center;
+  font-size: 14px;
   background: linear-gradient(180deg, #A0C4FF 0%, #4D9DE0 100%);
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
 }
 
 .header-text {
-  margin-left: 15px; /* Añadido margen para separación */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alineación a la izquierda */
+  flex-grow: 1; 
+  text-align: center; 
 }
 
 .back-arrow {
   cursor: pointer;
-  width: 25px; /* Incrementado para mejor usabilidad */
-  height: 25px; /* Incrementado para mejor usabilidad */
+  width: 25px;
+  height: 25px;
+  
 }
 
 .back-arrow img {
-  width: 100%; /* Ajustar imagen al contenedor */
+  width: 100%;
   height: auto;
 }
 
 h2 {
-  font-size: 24px; /* Aumentado para destacar el título */
+  font-size: 24px;
   font-weight: bold;
   margin: 5px 0;
   color: white;
@@ -52,8 +53,8 @@ p {
 .detalle-tarea {
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 20px; /* Aumentado para mayor espacio interno */
-  margin: 25px 0; /* Separación vertical */
+  padding: 20px;
+  margin: 25px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -65,13 +66,13 @@ p {
 }
 
 h3 {
-  font-size: 20px; /* Aumentado para mejor visibilidad */
+  font-size: 20px;
   font-weight: bold;
   color: #333;
 }
 
 .fecha {
-  font-size: 16px; /* Aumentado para mejor legibilidad */
+  font-size: 16px;
   color: #888;
   margin-bottom: 10px;
 }
@@ -82,12 +83,12 @@ h3 {
 
 .info div {
   margin-bottom: 10px;
-  font-size: 16px; /* Aumentado para mejor legibilidad */
+  font-size: 16px;
 }
 
 h4 {
   margin-bottom: 5px;
-  font-size: 18px; /* Aumentado para mejor visibilidad */
+  font-size: 18px;
 }
 
 strong {
@@ -96,18 +97,17 @@ strong {
 }
 
 .estado-pendiente {
-  color: red; 
-  font-weight: bold; 
+  color: red;
+  font-weight: bold;
 }
 
 textarea {
-  width: 100%; /* Ancho completo */
-  height: 100px; /* Aumentado para más espacio */
+  width: 95%;
+  height: 100px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
   resize: none;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -116,17 +116,15 @@ textarea {
 .finalizar-button {
   background-color: #4D9DE0;
   color: white;
-  padding: 12px; /* Aumentado para mejor clic */
+  padding: 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%; /* Ancho completo */
-  font-size: 18px; /* Aumentado para mejor legibilidad */
+  width: 100%;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .finalizar-button:hover {
-  background-color: #3A7BAE; 
+  background-color: #3A7BAE;
 }
-
-  

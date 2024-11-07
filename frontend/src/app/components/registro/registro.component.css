@@ -1,19 +1,16 @@
-
 .login-form-container {
     display: flex;
-    
-    align-items: center; /* Centra horizontalmente el contenido */
-    justify-content: center; /* Centra verticalmente el contenido */
+    align-items: center;
+    justify-content: center;
     height: 1000px;
-    /* Ocupar todo el ancho de la pantalla */
 }
 
 .login-form-content {
     background-color: #ffffff;
-    padding: 20px; /* Espaciado alrededor del formulario */
+    padding: 20px;
     border-radius: 10px;
-    width: 90%; /* Ocupar todo el ancho disponible */
-    max-width: 600px; /* Establecer un ancho máximo */
+    width: 90%;
+    max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,24 +18,24 @@
 
 .container-header-image {
     position: relative;
-    width: 100%; /* Asegura que la imagen del encabezado ocupe todo el ancho */
+    width: 100%;
 }
 
 .header-image {
     width: 100%;
-    max-height: 120px; 
+    max-height: 120px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
 
 h1 {
-    font-size: 28px; /* Tamaño del título ajustado para pantallas grandes */
-    margin: 10px 0; 
+    font-size: 28px;
+    margin: 10px 0;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 18px; /* Tamaño del subtítulo ajustado */
+    font-size: 18px;
     color: #555;
 }
 
@@ -51,49 +48,49 @@ label {
 }
 
 input, select {
-    width: 100%; /* Ocupar todo el ancho del formulario */
-    padding: 12px; /* Espaciado dentro de los campos */
-    margin-bottom: 15px; /* Espaciado entre campos */
-    border: 1px solid #ccc; /* Borde de los campos */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de fuente */
-    box-sizing: border-box; /* Asegura que el padding y el borde no se sumen al ancho total */
-    transition: all 0.3s ease; /* Transición suave en el foco */
-    outline: none; /* Sin contorno al hacer foco */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 input:focus, select:focus {
-    border-color: #6AA2E6; /* Color del borde al hacer foco */
-    box-shadow: 0 0 8px rgba(106, 162, 230, 0.5); /* Sombra al hacer foco */
+    border-color: #6AA2E6;
+    box-shadow: 0 0 8px rgba(106, 162, 230, 0.5);
 }
 
 select {
-    appearance: none; /* Estilo personalizado del selector */
-    background-color: white; /* Color de fondo */
-    padding-right: 30px; /* Espaciado a la derecha */
+    appearance: none;
+    background-color: white;
+    padding-right: 30px;
 }
 
 .login-button {
-    width: 100%; /* Ocupar todo el ancho del botón */
-    background-color: #6AA2E6; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 12px; /* Espaciado dentro del botón */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia a mano al pasar el ratón */
-    margin-top: 15px; /* Espaciado superior */
-    font-size: 18px; /* Tamaño de fuente más grande */
+    width: 100%;
+    background-color: #6AA2E6;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 18px;
 }
 
 .login-button:hover {
-    background-color: #5F96E9; /* Cambio de color al pasar el ratón */
+    background-color: #5F96E9;
 }
 
 .back-arrow {
     position: absolute;
     top: 10px;
-    left: 10px; 
+    left: 10px;
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -101,27 +98,25 @@ select {
 
 .back-arrow img {
     width: 20px;
-    height: 20px; 
+    height: 20px;
     z-index: 10;
 }
 
-/* Media Queries para pantallas más grandes */
 @media (min-width: 768px) {
     .login-form-content {
-        max-width: 800px; /* Aumento del ancho máximo para pantallas grandes */
-        padding: 50px; /* Aumento del espaciado para mejorar el diseño */
+        max-width: 800px;
+        padding: 50px;
     }
 
     h1 {
-        font-size: 36px; /* Aumento del tamaño del título para pantallas grandes */
+        font-size: 36px;
     }
 
     h3 {
-        font-size: 22px; /* Aumento del tamaño del subtítulo para pantallas grandes */
+        font-size: 22px;
     }
 
     .login-button {
-        font-size: 20px; /* Aumento del tamaño de fuente del botón para pantallas grandes */
+        font-size: 20px;
     }
 }
-

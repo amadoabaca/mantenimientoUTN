@@ -5,9 +5,10 @@ import { Piso } from '../interfaces/piso';
   providedIn: 'root'
 })
 export class PisoService {
-  private apiUrl = 'http://localhost:3000/api/lista-pisos';
-
+  private apiUrl = 'http://localhost:3000/api/lista-pisos'; 
   
+  constructor() {}
+
   async crearPiso(piso: Piso): Promise<Piso> {
     const response = await fetch(this.apiUrl, {
       method: 'POST',

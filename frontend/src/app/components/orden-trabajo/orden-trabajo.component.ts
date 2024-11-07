@@ -36,4 +36,3 @@ export class OrdenTrabajoDetalleComponent implements OnInit {
     this.router.navigate(['/dashboard-operario']);
   }
 }
-

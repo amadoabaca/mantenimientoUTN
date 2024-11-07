@@ -5,8 +5,9 @@ import { Edificio } from '../interfaces/edificio';
   providedIn: 'root'
 })
 export class EdificioService {
-  private apiUrl = 'http://localhost:3000/api/lista-edificios';
-
+  private apiUrl = 'http://localhost:3000/api/lista-edificios'; 
+  
+  constructor() {}
 
   async crearEdificio(edificio: Edificio): Promise<Edificio> {
     const response = await fetch(this.apiUrl, {

@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css'] 
+  styleUrl: './login-form.component.css'
 })
 export class LoginFormComponent implements OnInit {
   imageUrl: string | null = null;
@@ -63,4 +63,3 @@ export class LoginFormComponent implements OnInit {
     }
   }
 }
-

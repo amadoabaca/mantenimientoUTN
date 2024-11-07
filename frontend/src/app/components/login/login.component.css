@@ -1,4 +1,4 @@
-/* Contenedor para el logo y el nombre de la UTN arriba a la izquierda */
+
 .header {
     display: flex;
     align-items: center;
@@ -10,7 +10,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Estilos para el logo de la UTN y el nombre en el header */
+
 .header img {
     width: 80px;
     height: 80px;
@@ -23,19 +23,19 @@
     margin: 0;
 }
 
-/* Fondo blanco para la sección principal */
+
 section {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
     padding: 50px;
-    height: 100vh;
+    height: 80vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 100px; /* Espacio para evitar que el contenido se superponga con el header */
+    padding-top: 100px;
 }
 
-/* Contenedor principal */
+
 .container {
     width: 600px;
     height: auto;
@@ -45,10 +45,10 @@ section {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos para los elementos dentro del contenedor principal */
+
 .logo {
     display: flex;
     align-items: center;

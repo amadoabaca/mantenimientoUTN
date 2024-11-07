@@ -1,21 +1,21 @@
 <section class="login-form-container">
-  <div class="login-form-content">
-    <div class="container-header-image">
-      <div class="back-arrow" (click)="goBack()">
-        <img src="../../../assets/arrow.png" alt="Back">
+    <div class="login-form-content">
+      <div class="container-header-image">
+        <div class="back-arrow" (click)="goBack()">
+          <img src="../../../assets/arrow.png" alt="Back">
+        </div>
+        <img *ngIf="imageUrl" [src]="imageUrl" alt="Header Image" class="header-image">
       </div>
-      <img *ngIf="imageUrl" [src]="imageUrl" alt="Header Image" class="header-image">
+      <h1>Inicio de Sesion</h1>
+      <h3>Sistema de Gestion de Mantenimiento FRVT</h3>
+  
+      <label for="username">Usuario</label>
+      <input id="username" type="text" placeholder="Ingrese su Usuario" [(ngModel)]="email" name="username" required>
+
+      <label for="password">Contraseña</label>
+      <input id="password" type="password" placeholder="Ingrese su Contraseña" [(ngModel)]="password" name="password" required>
+  
+      <button class="login-button" (click)="onLogin()">Ingresar</button>
     </div>
-    <h1>Inicio de Sesion</h1>
-    <h3>Sistema de Gestion de Mantenimiento FRVT</h3>
-
-    <label for="username">Usuario</label>
-    <input id="username" type="text" placeholder="Ingrese su Usuario" [(ngModel)]="email" name="username" required>
-
-    <label for="password">Contraseña</label>
-    <input id="password" type="password" placeholder="Ingrese su Contraseña" [(ngModel)]="password" name="password" required>
-
-    <button class="login-button" (click)="onLogin()">Ingresar</button>
-  </div>
-</section>
+  </section>
   

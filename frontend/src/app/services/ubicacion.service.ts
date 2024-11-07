@@ -5,9 +5,11 @@ import { UbicacionActivo } from '../interfaces/ubicacion';
   providedIn: 'root'
 })
 export class UbicacionService {
+
   private apiUrl = 'http://localhost:3000/api/lista-ubi-activos'; 
 
-  
+  constructor() {}
+
   async crearUbicacion(ubicacion: UbicacionActivo): Promise<UbicacionActivo> {
     const response = await fetch(this.apiUrl, {
       method: 'POST',
@@ -42,4 +44,3 @@ export class UbicacionService {
     return await response.json();
   }
 }
-
