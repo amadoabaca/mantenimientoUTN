@@ -8,7 +8,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## Seleccionar un perfil para ingresar
 <p align="left">
-  Elige el perfil adecuado para acceder al sistema. Esta opción te permitirá ingresar según tus privilegios asignados.
+  Elige el perfil asignado para acceder al sistema.
 </p>
 
 ![Login](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/1-login.png)
@@ -26,7 +26,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## Panel de control operario
 <p align="left">
-  Una vez autenticado, los operarios tienen acceso a un panel personalizado que les permite gestionar sus tareas y actividades diarias.
+  Una vez autenticado, los operarios tienen acceso a un panel personalizado que les permite gestionar sus ordenes de trabajo.
 </p>
 
 ![Panel de control operario](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/4-panel-operario.png)
@@ -35,7 +35,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## Panel de control administrador
 <p align="left">
-  Los administradores tienen acceso a un panel avanzado con opciones para gestionar usuarios, solicitudes y otras configuraciones del sistema.
+  Los administradores tienen acceso a un panel avanzado con opciones para gestionar usuarios, solicitudes y ver el historial de OT.
 </p>
 
 ![Panel de control administrador](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/5-panel-admin.png)
@@ -44,7 +44,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## 1. Solicitar orden de trabajo
 <p align="left">
-  Los operarios pueden solicitar una orden de trabajo específica a través de un formulario sencillo y claro.
+  Los operarios pueden solicitar una orden de trabajo a través de un formulario.
 </p>
 
 ![Solicitar OT](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/7-generar-orden-trabajo.png)
@@ -62,7 +62,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## 3. Ver el historial de órdenes de trabajo
 <p align="left">
-  Consulta el historial de órdenes de trabajo para obtener información sobre tareas anteriores, estados y detalles.
+  Consulta el historial de órdenes de trabajo para obtener información sobre tareas anteriores.
 </p>
 
 ![Historial](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/9-historial.png)
@@ -71,7 +71,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## 4. Visualizar la orden de trabajo
 <p align="left">
-  Detalle visual de una orden de trabajo específica, mostrando su estado actual y las acciones tomadas.
+  Detalle de una orden de trabajo específica.
 </p>
 
 ![Ver OT](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/6-orden-trabajo.png)
