@@ -50,4 +50,12 @@ export const UsuarioLogin = async (req, res) => {
   }
 };
 
-
+export const getOperarios = async (req, res) => {
+  try {
+      const [rows] = await pool.query("SELECT * FROM Usuario WHERE area = 'operario'");
+      res.json(rows);
+  } catch (error) {
+      console.error('Error al obtener los operarios:', error);
+      res.status(500).json({ error: 'Error al obtener los operarios' });
+  }
+};

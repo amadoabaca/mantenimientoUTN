@@ -5,7 +5,9 @@ import {
   createOrdenTrabajo,
   updateOrdenTrabajo,
   deleteOrdenTrabajo,
-  getOrdenesTrabajoDetalladas
+  getOrdenesTrabajoDetalladas,
+  getOrdenesTrabajoPorOperario,
+  getOrdenesTrabajoFiltradas
 } from '../controllers/ordenTrabajoController.js';
 
 const router = express.Router();
@@ -18,6 +20,6 @@ router.put('/orden-trabajo', updateOrdenTrabajo);
 router.delete('/orden-trabajo', deleteOrdenTrabajo); 
 router.get('/orden-trabajo-detallada', getOrdenesTrabajoDetalladas);
 router.get('/orden-trabajo/:id', getOrdenTrabajoById);
-
-
+router.get('/orden-trabajo/operario', getOrdenesTrabajoPorOperario); 
+router.get('/orden-trabajo-filtrada', getOrdenesTrabajoFiltradas);
 export default router;

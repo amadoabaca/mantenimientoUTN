@@ -18,6 +18,21 @@ export class UserService {
     return response.json();
   }
 
+   
+  async getOperarios() {
+    try {
+      const response = await fetch(`${this.apiUrl}/operarios`,{
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      });
+      if (!response.ok) throw new Error('Failed to fetch operarios');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching operarios:', error);
+      return [];
+    }
+  }
+
   
   async registrarOperario(userData: { nombre: string; area: string; contraseña: string; email: string; apellido: string }): Promise<any> {
     const response = await fetch(`${this.apiUrl}/register`, {

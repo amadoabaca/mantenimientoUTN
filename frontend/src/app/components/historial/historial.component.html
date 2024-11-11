@@ -1,39 +1,61 @@
 <section class="container">
-    <div class="header">
-      <div class="back-arrow" (click)="goBack()">
-        <img src="../../../assets/arrow.png" alt="Back">
-      </div>
-      <div class="header-text">
-        <h2>Historial Ordenes de Trabajo</h2>
+  <div class="header">
+    <div class="back-arrow" (click)="goBack()">
+      <img src="../../../assets/arrow.png" alt="Back">
+    </div>
+    <div class="header-text">
+      <h2>Historial Ordenes de Trabajo</h2>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="text-card">
+      <h3>Filtrar órdenes</h3>
+
+      <select class="busqueda" [(ngModel)]="filtroActivo" (change)="onActivoChange()">
+        <option value="">Seleccionar Activo</option>
+        <option *ngFor="let activo of activos" [value]="activo.id_activo">
+          {{ activo.tipo }}
+        </option>
+      </select>
+
+      <select class="busqueda" [(ngModel)]="filtroOperario" (change)="onOperarioChange()">
+        <option value="">Seleccionar Operario</option>
+        <option *ngFor="let operario of operarios" [value]="operario.id_usuario">
+          {{ operario.nombre }}
+        </option>
+      </select>
+
+      <button class="boton-busqueda" (click)="filtrarOrdenes()">Filtrar</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="text-card">
+      <h3>Órdenes de Trabajo</h3>
+    </div>
+
+    <div *ngIf="listaOrdenes.length > 0; else noOrders">
+      <div class="solicitud-item" *ngFor="let ot of listaOrdenes">
+        <div class="solicitud-info">
+          <p class="solicitud-title">{{ ot.activo_tipo }} - {{ ot.descripcion_tarea }}</p>
+          <small>Ubicación: {{ ot.ubicacion_nombre }}</small>
+          <small>Edificio: {{ ot.edificio_nombre }}</small>
+          <small>Piso: {{ ot.piso_nombre }}</small>
+          <small>Sector: {{ ot.sector_nombre }}</small>
+          <small>Operario: {{ ot.usuario_nombre }}</small>
+        </div>
+        <span class="solicitud-id">ID: {{ ot.orden_trabajo_id }}</span>
       </div>
     </div>
     
-    <div class="card">
-      <div class="text-card">
-        <h3>Buscar ordenes</h3>
-        <input class="busqueda" placeholder="Activo o Sector" type="text">
-        <button class="boton-busqueda">Buscar</button>
-      </div>
-    </div>
+    <ng-template #noOrders>
+      <p>No hay órdenes de trabajo para mostrar con los filtros seleccionados.</p>
+    </ng-template>
+    
+  </div>
+</section>
 
-    <div class="card">
-        <div class="text-card">
-          <h3>Ordenes de Trabajo</h3>
-        </div>
 
-        <div *ngIf="ordenesCargadas">
-          <div class="solicitud-item" *ngFor="let orden of listaOrdenes">
-            <div class="solicitud-info">
-              <p class="solicitud-title">{{orden.activo}}</p>
-              <small>{{orden.ubicacion}}</small>
-            </div>
-            <span class="solicitud-id">{{orden.id}}</span>
-          </div>
-        </div>
-
-      </div>
-      
-  </section>
-  
 
 

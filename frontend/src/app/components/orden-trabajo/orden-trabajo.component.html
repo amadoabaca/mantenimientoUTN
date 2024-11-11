@@ -3,39 +3,37 @@
       <div class="back-arrow" (click)="goBack()">
           <img src="../../../assets/arrow.png" alt="Back">
         </div>
-     <!-- admin-dashboard.component.html -->
-<section>
-  <h2>Órdenes de Trabajo</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
+        <div class="header-text">
+          <h2>Orden de Trabajo de Mantenimiento</h2>
+          <p># {{ ordenTrabajo.orden_trabajo_id }}</p>
+        </div>
+    </div>
     
-        <th>Edificio</th>
-        <th>Piso</th>
-        <th>Sector</th>
-        <th>Ubicación</th>
-        <th>Activo</th>
-        <th>Tarea</th>
-        <th>Usuario</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let ot of ordenesTrabajo">
-        <td>{{ ot.orden_trabajo_id }}</td>
-      
-        
-        <td>{{ ot.edificio_nombre }}</td>
-        <td>{{ ot.piso_nombre }}</td>
-        <td>{{ ot.sector_nombre }}</td>
-        <td>{{ ot.ubicacion_nombre }}</td>
-        <td>{{ ot.activo_tipo }}</td>
-        <td>{{ ot.tarea_descripcion }}</td>
-        <td>{{ ot.nombre_usuario }}</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
+    <div class="detalle-tarea" >
+      <div class="text-detalle-tarea">
+        <h3>{{ ordenTrabajo.nombre }}</h3>
+        <p class="fecha">{{ ordenTrabajo.fecha }}</p>
+      </div>
+      <div class="info">
+        <div>
+          <strong>Edificio: </strong> {{ ordenTrabajo.edificio }}
+        </div>
+        <div>
+          <strong>Piso/Nivel: </strong> {{ ordenTrabajo.piso }}
+        </div>
+        <div>
+          <strong>Sector: </strong> {{ ordenTrabajo.sector }}
+        </div>
+        <div>
+          <strong>Tipo de Activo: </strong> {{ ordenTrabajo.tipoActivo }}
+        </div>
+        <div>
+          <strong>Estado de la Tarea: </strong> <span class="estado-pendiente"> Pendiente</span>
+        </div>
+      </div>
+      <h4>Tarea Asociada</h4>
+      <textarea readonly placeholder="Descripcion de la tarea">>{{ ordenTrabajo.instrucciones }}</textarea>
   
-  <app-dashboard-admin [ordenesTrabajo]="ordenesTrabajo"></app-dashboard-admin>
+      <button class="finalizar-button">Finalizar Tarea</button>
+    </div>
+  </section>

@@ -8,7 +8,6 @@ import { RegistroComponent } from './components/registro/registro.component';
 
 
 
-
 @NgModule({
     imports: [
       BrowserModule,
@@ -17,7 +16,7 @@ import { RegistroComponent } from './components/registro/registro.component';
     ],
     providers: [provideHttpClient()], 
 
-    bootstrap: [AppComponent,],
+    bootstrap: [],
   })
   export class AppModule { }
 

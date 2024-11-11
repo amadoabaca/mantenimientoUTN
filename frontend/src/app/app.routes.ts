@@ -16,26 +16,25 @@ export const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'orden-trabajo', component: OrdenTrabajoDetalleComponent },
   { path: 'orden-trabajo-form', component: OrdenTrabajoFormComponent },
-  { 
-    path: 'dashboard-admin', 
-    component: DashboardAdminComponent, 
-    canActivate: [AuthGuard], 
-    data: { area: 'administrativo' }  // Área requerida para administrativo
+  {
+    path: 'dashboard-admin',
+    component: DashboardAdminComponent,
+    canActivate: [AuthGuard],
+    data: { area: 'administrativo' },
   },
-  { 
-    path: 'dashboard-operario', 
-    component: DashboardOperarioComponent, 
-    canActivate: [AuthGuard], 
-    data: { area: 'operario' }  // Área requerida para operario
+  {
+    path: 'dashboard-operario',
+    component: DashboardOperarioComponent,
+    canActivate: [AuthGuard],
+    data: { area: 'operario' },
   },
   { path: 'historial', component: HistorialComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' }
-  ];
+  { path: '**', redirectTo: '/login' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}
