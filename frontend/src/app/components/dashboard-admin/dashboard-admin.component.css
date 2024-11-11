@@ -24,14 +24,14 @@
 
 .back-arrow {
   cursor: pointer;
-  width: 40px; /* Tamaño total del contenedor de la flecha */
+  width: 40px; 
   height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-right: 15px;
-  border-radius: 50%; /* Forma circular */
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo suave */
+  border-radius: 50%; 
+  background-color: rgba(255, 255, 255, 0.2); 
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .back-arrow img {
-  width: 20px; /* Ajuste del tamaño de la imagen */
+  width: 20px; 
   height: 20px;
 }
 

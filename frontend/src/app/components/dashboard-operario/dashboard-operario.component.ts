@@ -11,7 +11,7 @@ import { OrdenTrabajoService } from '../../services/orden-trabajo.service';
   templateUrl: './dashboard-operario.component.html',
   styleUrls: ['./dashboard-operario.component.css'],
   standalone: true,
-  imports: [CommonModule], // Agrega CommonModule para que ngFor funcione
+  imports: [CommonModule],
 })
 export class DashboardOperarioComponent implements OnInit {
   ordenesTrabajo: OrdenTrabajo[] = [];
@@ -30,7 +30,7 @@ export class DashboardOperarioComponent implements OnInit {
       this.ordenesTrabajo = await this.ordenTrabajoService.listaOrdenTrabajo();
       console.log('Órdenes de trabajo cargadas:', this.ordenesTrabajo);
     } catch (error) {
-      console.error('Error al cargar las órdenes de trabajo:', error);
+      console.error('Error al cargar las ordenes de trabajo:', error);
     }
   }
 

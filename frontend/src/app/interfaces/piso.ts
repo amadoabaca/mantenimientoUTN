@@ -1,5 +1,5 @@
 export interface Piso {
-    id_piso?: number;  // Auto incremental
-    piso: string;
-    label_tag: string;
+  id_piso?: number;
+  piso: string;
+  label_tag: string;
 }

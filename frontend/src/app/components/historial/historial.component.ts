@@ -3,14 +3,14 @@ import { OrdenTrabajoService } from '../../services/orden-trabajo.service';
 import { ActivoService } from '../../services/activo.service';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import {  CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-historial',
   templateUrl: './historial.component.html',
   styleUrls: ['./historial.component.css'],
-  standalone:true,
-  imports :[CommonModule,FormsModule]
+  standalone: true,
+  imports: [CommonModule, FormsModule],
 })
 export class HistorialComponent implements OnInit {
   listaOrdenes: any[] = [];
@@ -23,7 +23,7 @@ export class HistorialComponent implements OnInit {
     private ordenTrabajoService: OrdenTrabajoService,
     private activoService: ActivoService,
     private userService: UserService,
-    private router:Router
+    private router: Router
   ) {}
 
   async ngOnInit() {
@@ -46,15 +46,14 @@ export class HistorialComponent implements OnInit {
 
   onActivoChange() {
     if (this.filtroActivo) {
-      this.filtroOperario = ''; // Limpia el filtro de operario si se selecciona un activo
+      this.filtroOperario = '';
     }
     this.filtrarOrdenes();
   }
 
-  // Método para manejar el cambio de selección de operario
   onOperarioChange() {
     if (this.filtroOperario) {
-      this.filtroActivo = ''; // Limpia el filtro de activo si se selecciona un operario
+      this.filtroActivo = '';
     }
     this.filtrarOrdenes();
   }
@@ -66,14 +65,12 @@ export class HistorialComponent implements OnInit {
         this.listaOrdenes = ordenes;
         console.log('Órdenes filtradas:', this.listaOrdenes);
       })
-      .catch(error => console.error('Error al obtener órdenes de trabajo filtradas:', error));
+      .catch((error) =>
+        console.error('Error al obtener órdenes de trabajo filtradas:', error)
+      );
   }
-
-
-
 
   goBack() {
     this.router.navigate(['/dashboard-admin']);
   }
-  
 }

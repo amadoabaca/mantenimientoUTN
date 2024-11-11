@@ -133,8 +133,8 @@
 .solicitud-info small {
   color: #666666;
   font-size: 12px;
-  display: block; /* Para que cada <small> ocupe su propia línea */
-  margin-bottom: 5px; /* Espacio entre los <small> */
+  display: block; 
+  margin-bottom: 5px; 
 }
 
 .solicitud-id {

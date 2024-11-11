@@ -34,7 +34,7 @@
   transition: transform 0.3s ease;
 }
 .back-arrow img {
-  width: 20px; /* Ajuste del tamaño de la imagen */
+  width: 20px; 
   height: 20px;
 }
 .back-arrow:hover {
