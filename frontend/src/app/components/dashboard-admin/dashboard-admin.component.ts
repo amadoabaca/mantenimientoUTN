@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,OnInit,Input} from '@angular/core';
 import { Router } from '@angular/router';
-
+import { OrdenTrabajoService } from '../../services/orden-trabajo.service';
 @Component({
   selector: 'app-dashboard-admin',
   standalone: true,
@@ -9,8 +9,15 @@ import { Router } from '@angular/router';
   styleUrl: './dashboard-admin.component.css'
 })
 export class DashboardAdminComponent {
-  constructor(private router: Router) {}
-
+  constructor(private router: Router,
+    private ordenTrabajoService: OrdenTrabajoService
+  ) {}
+  
+  async ngOnInit() {
+    this.ordenesTrabajo = await this.ordenTrabajoService.getOrdenesTrabajo();
+    
+  }
+  @Input() ordenesTrabajo: any[] = [];
   goBack() {
     this.router.navigate(['/anterior-componente']);
   }

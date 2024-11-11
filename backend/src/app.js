@@ -1,6 +1,7 @@
 import express from 'express';
 import { ensureToken, verifyToken } from './middleware/tokenMiddleware.js';
 import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
 import edificioRoutes from './routes/edificioRoutes.js'; 
 import pisoRoutes from './routes/pisoRoutes.js';
 import sectorRoutes from './routes/sectorRoutes.js';
@@ -16,12 +17,14 @@ import cors from 'cors'
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:4200', 
-}));
+    origin: 'http://localhost:4200',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']  
+  }));
 app.use (express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(cookieParser());
-
+app.use(bodyParser.json());
 
 app.use('/api', edificioRoutes);
 app.use('/api', pisoRoutes);

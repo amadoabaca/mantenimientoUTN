@@ -8,7 +8,7 @@ import { OrdenTrabajoFormComponent } from './components/orden-trabajo-form/orden
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { DashboardOperarioComponent } from './components/dashboard-operario/dashboard-operario.component';
 import { HistorialComponent } from './components/historial/historial.component';
-
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,8 +16,18 @@ export const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'orden-trabajo', component: OrdenTrabajoDetalleComponent },
   { path: 'orden-trabajo-form', component: OrdenTrabajoFormComponent },
-  { path: 'dashboard-admin', component: DashboardAdminComponent },
-  { path: 'dashboard-operario', component: DashboardOperarioComponent },
+  { 
+    path: 'dashboard-admin', 
+    component: DashboardAdminComponent, 
+    canActivate: [AuthGuard], 
+    data: { area: 'administrativo' }  // Área requerida para administrativo
+  },
+  { 
+    path: 'dashboard-operario', 
+    component: DashboardOperarioComponent, 
+    canActivate: [AuthGuard], 
+    data: { area: 'operario' }  // Área requerida para operario
+  },
   { path: 'historial', component: HistorialComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }

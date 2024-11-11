@@ -42,16 +42,18 @@ export class OrdenTrabajoService {
     return await response.json();
   }
 
-  
-  async getOrdenTrabajo(id: any): Promise<OrdenTrabajo> {
-    const response = await fetch(`${this.apiUrl}/${id}`);
-
-    if (!response.ok) {
-      const errorResponse = await response.json();
-      throw new Error(errorResponse.error);
+  async getOrdenesTrabajo() {
+    try {
+      const response = await fetch('http://localhost:3000/api/orden-trabajo-detallada', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      });
+      if (!response.ok) throw new Error('Failed to fetch ordenes de trabajo');
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching ordenes de trabajo:', error);
+      return [];
     }
-
-    return await response.json();
   }
 
   

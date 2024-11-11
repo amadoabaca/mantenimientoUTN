@@ -1,6 +1,6 @@
 export interface Activo {
-    id_activo?: number;  // Auto incremental
-    nombre: string;
+    id_activo: string;  // Auto incremental
+    tipo: string;
     tag_diminutivo:string;
     label_tag:string;
 }

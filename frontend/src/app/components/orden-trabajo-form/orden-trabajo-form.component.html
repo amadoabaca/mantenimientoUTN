@@ -14,7 +14,7 @@
         <label for="edificio">Edificio:</label>
         <select id="edificio" class="form-control" [(ngModel)]="ordenTrabajo.edificio" (change)="onEdificioChange($event)">
           <option value="">Seleccione un edificio</option>
-          <option *ngFor="let edificio of getUniqueEdificios()" [value]="edificio.id">{{ edificio.nombre }}</option>
+          <option *ngFor="let edificio of getUniqueEdificios()" [value]="edificio.id_edificio">{{ edificio.nombre }}</option>
         </select>
       </div>
   
@@ -22,7 +22,7 @@
         <label for="piso">Piso/Nivel:</label>
         <select id="piso" class="form-control" [(ngModel)]="ordenTrabajo.piso" (change)="onPisoChange($event)">
           <option value="">Seleccione un piso o nivel</option>
-          <option *ngFor="let piso of getUniquePisos()" [value]="piso.id">{{ piso.piso }}</option>
+          <option *ngFor="let piso of getUniquePisos()" [value]="piso.id_piso">{{ piso.piso }}</option>
         </select>
       </div>
   
@@ -30,7 +30,7 @@
         <label for="sector">Sector:</label>
         <select id="sector" class="form-control" [(ngModel)]="ordenTrabajo.sector" (change)="onSectorChange($event)">
           <option value="">Seleccione un sector</option>
-          <option *ngFor="let sector of getUniqueSectores()" [value]="sector.id">{{ sector.sector }}</option>
+          <option *ngFor="let sector of getUniqueSectores()" [value]="sector.id_sector">{{ sector.sector }}</option>
         </select>
       </div>
   
@@ -38,7 +38,7 @@
         <label for="ubicacion">Ubicación:</label>
         <select id="ubicacion" class="form-control" [(ngModel)]="ordenTrabajo.ubicacion" (change)="onUbicacionChange($event)">
           <option value="">Seleccione una ubicación</option>
-          <option *ngFor="let ubicacion of getUniqueUbicaciones()" [value]="ubicacion.id">{{ ubicacion.ubicacion }}</option>
+          <option *ngFor="let ubicacion of getUniqueUbicaciones()" [value]="ubicacion.idubicacion_activo">{{ ubicacion.ubicacion }}</option>
         </select>
       </div>
   
@@ -46,17 +46,16 @@
         <label for="tipoActivo">Tipo de Activo:</label>
         <select id="tipoActivo" class="form-control" (change)="onActivoChange($event)">
           <option value="">Seleccione un tipo de activo</option>
-          <option *ngFor="let activo of activos" [value]="activo.tipo">{{ activo.tipo }}</option>
+          <option *ngFor="let activo of activos" [value]="activo.id_activo + '-' + activo.id_tarea">{{ activo.tipo }}</option>
         </select>
       </div>
+      
 
       <div class="form-group">
-        <label>Tarea asociada:</label>
-        <select id="tarea" class="form-control"  (change)="onTareaChange($event)">
+        <label>Tareas asociadas:</label>
+        <select id="tareas" class="form-control" multiple [(ngModel)]="ordenTrabajo.activo_tarea">
           <option *ngFor="let tarea of tarea" [value]="tarea.id_tarea">{{ tarea.tarea }}</option>
-      
         </select>
-        
       </div>
   
       <button class="submit-button" (click)="enviarSolicitud()">Enviar Solicitud</button>

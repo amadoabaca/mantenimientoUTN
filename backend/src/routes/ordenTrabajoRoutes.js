@@ -17,7 +17,7 @@ router.post('/orden-trabajo', createOrdenTrabajo);
 router.put('/orden-trabajo', updateOrdenTrabajo); 
 router.delete('/orden-trabajo', deleteOrdenTrabajo); 
 router.get('/orden-trabajo-detallada', getOrdenesTrabajoDetalladas);
-
+router.get('/orden-trabajo/:id', getOrdenTrabajoById);
 
 
 export default router;

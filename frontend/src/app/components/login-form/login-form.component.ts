@@ -12,10 +12,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login-form.component.css'
 })
 export class LoginFormComponent implements OnInit {
-  imageUrl: string | null = null;
-  role: string | null = null; 
-  email: string = '';
-  password: string = '';
+  email = '';
+  password = '';
+  role = '';
+  imageUrl = '';
 
   constructor(
     private router: Router,
@@ -23,7 +23,7 @@ export class LoginFormComponent implements OnInit {
     private authService: AuthService 
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.imageUrl = params['image'];
       this.role = params['role'];
@@ -33,33 +33,18 @@ export class LoginFormComponent implements OnInit {
   goBack() {
     this.router.navigate(['/login']);
   }
+// login-form.component.ts
+// login-form.component.ts
 
-  async onLogin() {
-    if (!this.email || !this.password) {
-      console.error('Email y contraseña son requeridos');
-      return; 
-    }
 
-    try {
-      const response = await this.authService.login(this.email, this.password);
-      console.log('Inicio de sesión exitoso:', response);
-      if (response && response.area) {
-        this.navigateToDashboard(response.area); 
-      } else {
-        console.error('No se recibió el área del usuario');
-      }
-    } catch (error) {
-      console.error('Error al iniciar sesión:', error);
-    }
+async login() {
+  const credentials = { email: this.email, contraseña: this.password, role: this.role };
+  const response = await this.authService.login(credentials);
+
+  if (response && response.token) {
+    this.router.navigate(this.role === 'administrativo' ? ['/dashboard-admin'] : ['/dashboard-operario']);
+  } else {
+    console.error('Login failed');
   }
-
-  navigateToDashboard(area: string) {
-    if (area === 'administrativo') {
-      this.router.navigate(['/dashboard-admin']);
-    } else if (area === 'operario') {
-      this.router.navigate(['/dashboard-operario']);
-    } else {
-      this.router.navigate(['/']);
-    }
-  }
+}
 }

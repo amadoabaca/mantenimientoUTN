@@ -29,44 +29,25 @@ export const CrearUsuario = async (req, res) => {
     res.json({ error: 'Error al registrar usuario' });
   };
 }
-
+// usuarioController.js
+// usuarioController.js
 export const UsuarioLogin = async (req, res) => {
   const { email, contraseña } = req.body;
-
   if (!email || !contraseña) {
-    return res.json({ error: 'Email y contraseña son requeridos' });
+    return res.status(400).json({ error: 'Email y contraseña son requeridos' });
   }
-
   try {
     const [results] = await pool.query('SELECT * FROM Usuario WHERE email = ?', [email]);
-    console.log('Resultados de la consulta:', results);
-    
     if (results.length === 0 || !(await bcrypt.compare(contraseña, results[0].contraseña))) {
-      return res.status(401).json({ error: 'Usuario y/o contraseña no encontrado' });
+      return res.status(401).json({ error: 'Usuario y/o contraseña incorrectos' });
     }
-
-    const user = results[0];
-
     
-    const token = jwt.sign(
-      { id: user.id_usuario, email: user.email, area: user.area }, 
-      SECRET_KEY,
-      { expiresIn: '2h' }
-    );
-
-    res.cookie('token', token, {
-      httpOnly: true, 
-      secure: process.env.NODE_ENV === 'production', 
-      maxAge: 7200000 
-    });
-
-    
-    res.json({
-      message: 'Inicio de sesión exitoso',
-      area: user.area 
-    });
+    const token = jwt.sign({ id: results[0].id_usuario, email: results[0].email }, SECRET_KEY, { expiresIn: '2h' });
+    res.json({ token });  // Asegúrate de enviar un objeto con 'token'
   } catch (err) {
-    console.error('Error al iniciar sesión: ' + err);
+    console.error('Error al iniciar sesión:', err);
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }
 };
+
+
