@@ -1,9 +1,10 @@
-1. Configuración Inicial de la Aplicación
+**1. Configuración Inicial de la Aplicación**
    Archivo de configuración principal (app.js o index.js)
    Este archivo configura y ejecuta el servidor Express. Aquí es donde se importa y configura el servidor Express, las rutas de la API, y se hace la conexión con la base de datos.
 
 Configuración básica de Express:
 
+```bash
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -45,8 +46,11 @@ database: 'nombre_de_base_de_datos',
 });
 
 export { app, db };
+```
 
-2. Rutas de Usuario (/usuarios)
+**2. Rutas de Usuario (/usuarios)**
+
+
    GET /lista-usuarios
    Descripción: Obtiene una lista de todos los usuarios registrados.
    Controlador: Usuarios
@@ -56,7 +60,7 @@ POST /register
 Descripción: Registra un nuevo usuario.
 Controlador: CrearUsuario
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "apellido": "string",
@@ -64,17 +68,17 @@ Cuerpo de la solicitud:
 "contraseña": "string",
 "area": "string"
 }
-
+```
 POST /login
 Descripción: Permite a un usuario iniciar sesión.
 Controlador: UsuarioLogin
 Cuerpo de la solicitud:
-
+```bash
 {
 "email": "string",
 "contraseña": "string"
 }
-
+```
 GET /operarios
 Descripción: Obtiene la lista de operarios.
 Controlador: getOperarios
@@ -95,18 +99,18 @@ POST /ubi-activo
 Descripción: Crea una nueva ubicación de activo.
 Controlador: createUbicacionActivo
 Cuerpo de la solicitud:
-
+```bash
 {
 "activo_id": "number",
 "sector": "string",
 "ubicacion": "string"
 }
-
+```
 DELETE /ubi-activo/
 Descripción: Elimina una ubicación de activo específica.
 Controlador: deleteUbicacionActivoById
 
-3. Rutas de Edificio (/edificio)
+**3. Rutas de Edificio (/edificio)**
    GET /lista-edificios
    Descripción: Obtiene todos los edificios.
    Controlador: Edificios
@@ -121,12 +125,13 @@ POST /edificio
 Descripción: Crea un nuevo edificio.
 Controlador: createEdificio
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "direccion": "string",
 "descripcion": "string"
 }
+```
 DELETE /edificio/
 Descripción: Elimina un edificio específico por ID.
 Controlador: deleteEdificioById
@@ -135,14 +140,14 @@ PUT /edificio/
 Descripción: Actualiza un edificio específico por ID.
 Controlador: updateEdificioById
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "direccion": "string",
 "descripcion": "string"
 }
-
-4. Rutas de Piso (/piso)
+```
+**4. Rutas de Piso (/piso)**
    GET /lista-pisos
    Descripción: Obtiene todos los pisos.
    Controlador: Pisos
@@ -157,13 +162,13 @@ POST /piso
 Descripción: Crea un nuevo piso.
 Controlador: createPiso
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "edificio_id": "number",
 "descripcion": "string"
 }
-
+```
 DELETE /piso/
 Descripción: Elimina un piso específico por ID.
 Controlador: deletePisoById
@@ -172,14 +177,14 @@ PUT /piso/
 Descripción: Actualiza un piso específico por ID.
 Controlador: updatePisoById
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "edificio_id": "number",
 "descripcion": "string"
 }
-
-5. Rutas de Sector (/sector)
+```
+**5. Rutas de Sector (/sector)**
    GET /sectores
    Descripción: Obtiene todos los sectores.
    Controlador: Sectores
@@ -194,13 +199,13 @@ POST /sector
 Descripción: Crea un nuevo sector.
 Controlador: createSector
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "piso_id": "number",
 "descripcion": "string"
 }
-
+```
 DELETE /sector/
 Descripción: Elimina un sector específico por ID.
 Controlador: deleteSectorById
@@ -209,14 +214,14 @@ PUT /sector/
 Descripción: Actualiza un sector específico por ID.
 Controlador: updateSectorById
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "piso_id": "number",
 "descripcion": "string"
 }
-
-6. Rutas de Tarea (/tarea)
+```
+**6. Rutas de Tarea (/tarea)**
    GET /tareas
    Descripción: Obtiene todas las tareas.
    Controlador: Tareas
@@ -231,12 +236,12 @@ POST /tareas
 Descripción: Crea una nueva tarea.
 Controlador: createTarea
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "descripcion": "string"
 }
-
+```
 DELETE /tareas/
 Descripción: Elimina una tarea específica por ID.
 Controlador: deleteTareaById
@@ -245,13 +250,13 @@ PUT /tareas/
 Descripción: Actualiza una tarea específica por ID.
 Controlador: updateTareaById
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "descripcion": "string"
 }
-
-7. Rutas de Activo (/activo)
+```
+**7. Rutas de Activo (/activo)**
    GET /activos
    Descripción: Obtiene todos los activos.
    Controlador: Activos
@@ -266,13 +271,13 @@ POST /activo
 Descripción: Crea un nuevo activo.
 Controlador: createActivo
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "tipo": "string",
 "estado": "string"
 }
-
+```
 DELETE /activo/
 Descripción: Elimina un activo específico por ID.
 Controlador: deleteActivoById
@@ -281,14 +286,14 @@ PUT /activo/
 Descripción: Actualiza un activo específico por ID.
 Controlador: updateActivoById
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "tipo": "string",
 "estado": "string"
 }
-
-8. Rutas de Activo-Tarea (/activoTarea)
+```
+**8. Rutas de Activo-Tarea (/activoTarea)**
    GET /activoTareas/
    Descripción: Obtiene todas las tareas asociadas a un activo.
    Controlador: ActivoTareas
@@ -299,7 +304,7 @@ Descripción: Obtiene una tarea específica asociada a un activo.
 Controlador: ActivoTareaId
 Respuesta: Detalles de una tarea asociada al activo.
 
-9. Rutas de Orden de Trabajo (/orden-trabajo)
+**9. Rutas de Orden de Trabajo (/orden-trabajo)**
    GET /ordenes-trabajo
    Descripción: Obtiene todas las órdenes de trabajo.
    Controlador: OrdenesTrabajo
@@ -314,7 +319,7 @@ POST /orden-trabajo
 Descripción: Crea una nueva orden de trabajo.
 Controlador: createOrdenTrabajo
 Cuerpo de la solicitud:
-
+```bash
 {
 "operario": "string",
 "nombre": "string",
@@ -329,7 +334,7 @@ Cuerpo de la solicitud:
 "instrucciones": "string",
 "activo_tarea": "string"
 }
-
+```
 DELETE /orden-trabajo/
 Descripción: Elimina una orden de trabajo específica por ID.
 Controlador: deleteOrdenTrabajoById
@@ -338,7 +343,7 @@ PUT /orden-trabajo/
 Descripción: Actualiza una orden de trabajo específica por ID.
 Controlador: updateOrdenTrabajoById
 Cuerpo de la solicitud:
-
+```bash
 {
 "operario": "string",
 "nombre": "string",
@@ -353,8 +358,8 @@ Cuerpo de la solicitud:
 "instrucciones": "string",
 "activo_tarea": "string"
 }
-
-10. Rutas de Número de Tipo (/numero-tipo)
+```
+**10. Rutas de Número de Tipo (/numero-tipo)**
     GET /numero-tipo
     Descripción: Obtiene todos los números de tipo.
     Controlador: NumeroTipo
@@ -364,12 +369,12 @@ POST /numero-tipo
 Descripción: Crea un nuevo número de tipo.
 Controlador: createNumeroTipo
 Cuerpo de la solicitud:
-
+```bash
 {
 "numero": "string",
 "tipo": "string"
 }
-
+```
 DELETE /numero-tipo/
 Descripción: Elimina un número de tipo específico por ID.
 Controlador: deleteNumeroTipoById
@@ -378,11 +383,13 @@ PUT /numero-tipo/
 Descripción: Actualiza un número de tipo específico por ID.
 Controlador: updateNumeroTipoById
 Cuerpo de la solicitud:
-
+```bash
 {
 "numero": "string",
 "tipo": "string"
-} 11. Rutas de Operario (/operario)
+} 
+```
+**11. Rutas de Operario (/operario)**
 GET /operarios
 Descripción: Obtiene la lista de operarios.
 Controlador: getOperarios
@@ -392,14 +399,14 @@ POST /operario
 Descripción: Crea un nuevo operario.
 Controlador: createOperario
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "apellido": "string",
 "email": "string",
 "telefono": "string"
 }
-
+```
 DELETE /operario/
 Descripción: Elimina un operario específico por ID.
 Controlador: deleteOperarioById
@@ -408,10 +415,11 @@ PUT /operario/
 Descripción: Actualiza un operario específico por ID.
 Controlador: updateOperarioById
 Cuerpo de la solicitud:
-
+```bash
 {
 "nombre": "string",
 "apellido": "string",
 "email": "string",
 "telefono": "string"
 }
+```
