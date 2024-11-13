@@ -1,10 +1,57 @@
-# Frontend
+# Documentación del Frontend
 
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 18.2.7.
 
----
+## Configuracion inicial
+Inicializar el servidor
+```bash
+npm install
+ng serve
+```
+Dependencias
+```bash
+@angular/animations : ^18.2.0
+@angular/common : ^18.2.0
+@angular/compiler : ^18.2.0
+@angular/core : ^18.2.0
+@angular/forms : ^18.2.0
+@angular/platform-browser : ^18.2.0
+@angular/platform-browser-dynamic : ^18.2.0
+@angular/platform-server : ^18.2.0
+@angular/router : ^18.2.0
+@angular/ssr : ^18.2.7
+express : ^4.18.2
+front : file:
+rxjs : ~7.8.0
+tslib : ^2.3.0
+zone.js : ~0.14.10
+```
+## Estructura del Proyecto
+- `public/`
+- `src/`
+  - `app/`
+    - `components/`
+    - `guars/`
+    - `interfaces/`
+    - `services/`
+    - `app.component.html`
+    - `app.component.css`
+    - `app.component.ts`
+    - `app.config.ts`
+    - `app.modules.ts`
+    - `app.routes.ts`
+  - `assets/`
+  - `index.html`
+  - `style.css`
+  - `main.ts`
+- `angular.json`
+- `README.md`
+- `package.json`
+- `tsconfig.json`
+- `tsconfig.app.json`
 
-# Documentación
+
+# ¿Como usar el sistema?
 
 ## Seleccionar un perfil para ingresar
 <p align="left">
