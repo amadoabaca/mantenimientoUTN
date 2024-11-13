@@ -1,4 +1,4 @@
-## 1. Configuración Inicial de la Aplicación
+# Configuración Inicial de la Aplicación
    Archivo de configuración principal (app.js o index.js)
    Este archivo configura y ejecuta el servidor Express. Aquí es donde se importa y configura el servidor Express, las rutas de la API, y se hace la conexión con la base de datos.
 
@@ -48,7 +48,7 @@ database: 'nombre_de_base_de_datos',
 export { app, db };
 ```
 
-## 2. Rutas de Usuario (/usuarios)
+## Rutas de Usuario (/usuarios)
 
 
    GET /lista-usuarios
@@ -84,7 +84,7 @@ Descripción: Obtiene la lista de operarios.
 Controlador: getOperarios
 Respuesta: Array de operarios.
 
-## 3. Rutas de Ubicación de Activo (/ubi-activo)
+## Rutas de Ubicación de Activo (/ubi-activo)
    GET /lista-ubi-activos
    Descripción: Obtiene todas las ubicaciones de activos.
    Controlador: UbicacionesActivos
@@ -110,7 +110,7 @@ DELETE /ubi-activo/
 Descripción: Elimina una ubicación de activo específica.
 Controlador: deleteUbicacionActivoById
 
-## 4. Rutas de Edificio (/edificio)
+## Rutas de Edificio (/edificio)
    GET /lista-edificios
    Descripción: Obtiene todos los edificios.
    Controlador: Edificios
@@ -147,7 +147,7 @@ Cuerpo de la solicitud:
 "descripcion": "string"
 }
 ```
-## 5. Rutas de Piso (/piso)
+## Rutas de Piso (/piso)
    GET /lista-pisos
    Descripción: Obtiene todos los pisos.
    Controlador: Pisos
@@ -184,7 +184,7 @@ Cuerpo de la solicitud:
 "descripcion": "string"
 }
 ```
-## 6. Rutas de Sector (/sector)
+## Rutas de Sector (/sector)
    GET /sectores
    Descripción: Obtiene todos los sectores.
    Controlador: Sectores
@@ -221,7 +221,7 @@ Cuerpo de la solicitud:
 "descripcion": "string"
 }
 ```
-## 7. Rutas de Tarea (/tarea)*
+## Rutas de Tarea (/tarea)
    GET /tareas
    Descripción: Obtiene todas las tareas.
    Controlador: Tareas
@@ -256,7 +256,7 @@ Cuerpo de la solicitud:
 "descripcion": "string"
 }
 ```
-## 8. Rutas de Activo (/activo)
+## Rutas de Activo (/activo)
    GET /activos
    Descripción: Obtiene todos los activos.
    Controlador: Activos
@@ -293,7 +293,7 @@ Cuerpo de la solicitud:
 "estado": "string"
 }
 ```
-## 9. Rutas de Activo-Tarea (/activoTarea)
+## Rutas de Activo-Tarea (/activoTarea)
    GET /activoTareas/
    Descripción: Obtiene todas las tareas asociadas a un activo.
    Controlador: ActivoTareas
@@ -304,7 +304,7 @@ Descripción: Obtiene una tarea específica asociada a un activo.
 Controlador: ActivoTareaId
 Respuesta: Detalles de una tarea asociada al activo.
 
-## 10. Rutas de Orden de Trabajo (/orden-trabajo)
+## Rutas de Orden de Trabajo (/orden-trabajo)
    GET /ordenes-trabajo
    Descripción: Obtiene todas las órdenes de trabajo.
    Controlador: OrdenesTrabajo
@@ -359,7 +359,7 @@ Cuerpo de la solicitud:
 "activo_tarea": "string"
 }
 ```
-## 11. Rutas de Número de Tipo (/numero-tipo)
+## Rutas de Número de Tipo (/numero-tipo)
     GET /numero-tipo
     Descripción: Obtiene todos los números de tipo.
     Controlador: NumeroTipo
@@ -389,7 +389,7 @@ Cuerpo de la solicitud:
 "tipo": "string"
 } 
 ```
-## 12. Rutas de Operario (/operario)
+## Rutas de Operario (/operario)
 GET /operarios
 Descripción: Obtiene la lista de operarios.
 Controlador: getOperarios
