@@ -8,6 +8,7 @@ import { OrdenTrabajoFormComponent } from './components/orden-trabajo-form/orden
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { DashboardOperarioComponent } from './components/dashboard-operario/dashboard-operario.component';
 import { HistorialComponent } from './components/historial/historial.component';
+import { GestionComponent } from './components/gestion/gestion.component';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -29,6 +30,7 @@ export const routes: Routes = [
     data: { area: 'operario' },
   },
   { path: 'historial', component: HistorialComponent },
+  { path: 'gestion', component: GestionComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' },
 ];

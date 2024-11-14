@@ -1,0 +1,2250 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">front documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  OrdenTrabajoFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-orden-trabajo-form</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>FormsModule</code>
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./orden-trabajo-form.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./orden-trabajo-form.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activos" >activos</a>
+                            </li>
+                            <li>
+                                <a href="#edificios" >edificios</a>
+                            </li>
+                            <li>
+                                <a href="#operarios" >operarios</a>
+                            </li>
+                            <li>
+                                <a href="#ordenTrabajo" >ordenTrabajo</a>
+                            </li>
+                            <li>
+                                <a href="#pisos" >pisos</a>
+                            </li>
+                            <li>
+                                <a href="#relaciones" >relaciones</a>
+                            </li>
+                            <li>
+                                <a href="#sectores" >sectores</a>
+                            </li>
+                            <li>
+                                <a href="#tarea" >tarea</a>
+                            </li>
+                            <li>
+                                <a href="#ubicaciones" >ubicaciones</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#enviarSolicitud" >enviarSolicitud</a>
+                            </li>
+                            <li>
+                                <a href="#getUniqueEdificios" >getUniqueEdificios</a>
+                            </li>
+                            <li>
+                                <a href="#getUniquePisos" >getUniquePisos</a>
+                            </li>
+                            <li>
+                                <a href="#getUniqueSectores" >getUniqueSectores</a>
+                            </li>
+                            <li>
+                                <a href="#getUniqueUbicaciones" >getUniqueUbicaciones</a>
+                            </li>
+                            <li>
+                                <a href="#goBack" >goBack</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerActivosConTareas" >obtenerActivosConTareas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerDatos" >obtenerDatos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerEdificios" >obtenerEdificios</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerPisos" >obtenerPisos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerSectores" >obtenerSectores</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerUbicaciones" >obtenerUbicaciones</a>
+                            </li>
+                            <li>
+                                <a href="#onActivoChange" >onActivoChange</a>
+                            </li>
+                            <li>
+                                <a href="#onEdificioChange" >onEdificioChange</a>
+                            </li>
+                            <li>
+                                <a href="#onPisoChange" >onPisoChange</a>
+                            </li>
+                            <li>
+                                <a href="#onSectorChange" >onSectorChange</a>
+                            </li>
+                            <li>
+                                <a href="#onTareaChange" >onTareaChange</a>
+                            </li>
+                            <li>
+                                <a href="#onUbicacionChange" >onUbicacionChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, activoTareaService: <a href="../injectables/ActivoTareaService.html" target="_self">ActivoTareaService</a>, userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, ubicacionService: <a href="../injectables/UbicacionService.html" target="_self">UbicacionService</a>, tareaService: <a href="../injectables/TareaService.html" target="_self">TareaService</a>, sectorService: <a href="../injectables/SectorService.html" target="_self">SectorService</a>, pisoService: <a href="../injectables/PisoService.html" target="_self">PisoService</a>, edificioService: <a href="../injectables/EdificioService.html" target="_self">EdificioService</a>, ordenTrabajoService: <a href="../injectables/OrdenTrabajoService.html" target="_self">OrdenTrabajoService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activoTareaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ActivoTareaService.html" target="_self" >ActivoTareaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ubicacionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UbicacionService.html" target="_self" >UbicacionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tareaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TareaService.html" target="_self" >TareaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sectorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SectorService.html" target="_self" >SectorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pisoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PisoService.html" target="_self" >PisoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>edificioService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EdificioService.html" target="_self" >EdificioService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ordenTrabajoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OrdenTrabajoService.html" target="_self" >OrdenTrabajoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enviarSolicitud"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>enviarSolicitud</b></span>
+                        <a href="#enviarSolicitud"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enviarSolicitud()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="200"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:200</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUniqueEdificios"></a>
+                    <span class="name">
+                        <span ><b>getUniqueEdificios</b></span>
+                        <a href="#getUniqueEdificios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUniqueEdificios()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:152</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUniquePisos"></a>
+                    <span class="name">
+                        <span ><b>getUniquePisos</b></span>
+                        <a href="#getUniquePisos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUniquePisos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUniqueSectores"></a>
+                    <span class="name">
+                        <span ><b>getUniqueSectores</b></span>
+                        <a href="#getUniqueSectores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUniqueSectores()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="166"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:166</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUniqueUbicaciones"></a>
+                    <span class="name">
+                        <span ><b>getUniqueUbicaciones</b></span>
+                        <a href="#getUniqueUbicaciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUniqueUbicaciones()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:173</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goBack"></a>
+                    <span class="name">
+                        <span ><b>goBack</b></span>
+                        <a href="#goBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goBack()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerActivosConTareas"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>obtenerActivosConTareas</b></span>
+                        <a href="#obtenerActivosConTareas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerActivosConTareas()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="121"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerDatos"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>obtenerDatos</b></span>
+                        <a href="#obtenerDatos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerDatos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerEdificios"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>obtenerEdificios</b></span>
+                        <a href="#obtenerEdificios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerEdificios()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerPisos"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>obtenerPisos</b></span>
+                        <a href="#obtenerPisos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerPisos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerSectores"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>obtenerSectores</b></span>
+                        <a href="#obtenerSectores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerSectores()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerUbicaciones"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>obtenerUbicaciones</b></span>
+                        <a href="#obtenerUbicaciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerUbicaciones()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onActivoChange"></a>
+                    <span class="name">
+                        <span ><b>onActivoChange</b></span>
+                        <a href="#onActivoChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onActivoChange(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEdificioChange"></a>
+                    <span class="name">
+                        <span ><b>onEdificioChange</b></span>
+                        <a href="#onEdificioChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEdificioChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="223"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:223</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPisoChange"></a>
+                    <span class="name">
+                        <span ><b>onPisoChange</b></span>
+                        <a href="#onPisoChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPisoChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="227"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:227</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSectorChange"></a>
+                    <span class="name">
+                        <span ><b>onSectorChange</b></span>
+                        <a href="#onSectorChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSectorChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="231"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:231</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onTareaChange"></a>
+                    <span class="name">
+                        <span ><b>onTareaChange</b></span>
+                        <a href="#onTareaChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onTareaChange(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="194"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:194</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onUbicacionChange"></a>
+                    <span class="name">
+                        <span ><b>onUbicacionChange</b></span>
+                        <a href="#onUbicacionChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onUbicacionChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="235"
+                                    class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:235</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activos"></a>
+                    <span class="name">
+                        <span ><b>activos</b></span>
+                        <a href="#activos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edificios"></a>
+                    <span class="name">
+                        <span ><b>edificios</b></span>
+                        <a href="#edificios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="operarios"></a>
+                    <span class="name">
+                        <span ><b>operarios</b></span>
+                        <a href="#operarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ordenTrabajo"></a>
+                    <span class="name">
+                        <span ><b>ordenTrabajo</b></span>
+                        <a href="#ordenTrabajo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/OrdenTrabajo.html" target="_self" >OrdenTrabajo</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    orden_trabajo_id: 0,
+    operario: &#x27;&#x27;,
+    edificio: 0,
+    piso: 0,
+    sector: &#x27;&#x27;,
+    ubicacion: &#x27;&#x27;,
+    activo: &#x27;&#x27;,
+    nombre: &#x27;&#x27;,
+    fecha: &#x27;&#x27;,
+    tipoActivo: &#x27;&#x27;,
+    solicitante: &#x27;&#x27;,
+    instrucciones: &#x27;&#x27;,
+    activo_tarea: &#x27;&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pisos"></a>
+                    <span class="name">
+                        <span ><b>pisos</b></span>
+                        <a href="#pisos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="relaciones"></a>
+                    <span class="name">
+                        <span ><b>relaciones</b></span>
+                        <a href="#relaciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ActivoTarea[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sectores"></a>
+                    <span class="name">
+                        <span ><b>sectores</b></span>
+                        <a href="#sectores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tarea"></a>
+                    <span class="name">
+                        <span ><b>tarea</b></span>
+                        <a href="#tarea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ubicaciones"></a>
+                    <span class="name">
+                        <span ><b>ubicaciones</b></span>
+                        <a href="#ubicaciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { ActivoTareaService } from &#x27;../../services/activo-tarea.service&#x27;;
+import { UserService } from &#x27;../../services/user.service&#x27;;
+import { UbicacionService } from &#x27;../../services/ubicacion.service&#x27;;
+import { TareaService } from &#x27;../../services/tarea.service&#x27;;
+import { SectorService } from &#x27;../../services/sector.service&#x27;;
+import { PisoService } from &#x27;../../services/piso.service&#x27;;
+import { EdificioService } from &#x27;../../services/edificio.service&#x27;;
+import { OrdenTrabajoService } from &#x27;../../services/orden-trabajo.service&#x27;;
+import { OrdenTrabajo } from &#x27;../../interfaces/orden-trabajo&#x27;;
+import { ActivoService } from &#x27;../../services/activo.service&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { ActivoTarea } from &#x27;../../interfaces/activo-tarea&#x27;;
+
+@Component({
+  selector: &#x27;app-orden-trabajo-form&#x27;,
+  standalone: true,
+  imports: [FormsModule, CommonModule],
+  templateUrl: &#x27;./orden-trabajo-form.component.html&#x27;,
+  styleUrls: [&#x27;./orden-trabajo-form.component.css&#x27;],
+})
+export class OrdenTrabajoFormComponent implements OnInit {
+  ordenTrabajo: OrdenTrabajo &#x3D; {
+    orden_trabajo_id: 0,
+    operario: &#x27;&#x27;,
+    edificio: 0,
+    piso: 0,
+    sector: &#x27;&#x27;,
+    ubicacion: &#x27;&#x27;,
+    activo: &#x27;&#x27;,
+    nombre: &#x27;&#x27;,
+    fecha: &#x27;&#x27;,
+    tipoActivo: &#x27;&#x27;,
+    solicitante: &#x27;&#x27;,
+    instrucciones: &#x27;&#x27;,
+    activo_tarea: &#x27;&#x27;,
+  };
+
+  operarios: any[] &#x3D; [];
+  edificios: any[] &#x3D; [];
+  pisos: any[] &#x3D; [];
+  sectores: any[] &#x3D; [];
+  ubicaciones: any[] &#x3D; [];
+  activos: any[] &#x3D; [];
+  tarea: any[] &#x3D; [];
+  relaciones: ActivoTarea[] &#x3D; [];
+
+  constructor(
+    private router: Router,
+    private activoTareaService: ActivoTareaService,
+    private userService: UserService,
+    private ubicacionService: UbicacionService,
+    private tareaService: TareaService,
+    private sectorService: SectorService,
+    private pisoService: PisoService,
+    private edificioService: EdificioService,
+    private ordenTrabajoService: OrdenTrabajoService
+  ) {}
+
+  async ngOnInit(): Promise&lt;void&gt; {
+    try {
+      await this.obtenerDatos();
+      console.log(&#x27;Tareas obtenidas:&#x27;, this.tarea);
+    } catch (error) {
+      console.error(&#x27;Error en ngOnInit:&#x27;, error);
+    }
+  }
+
+  private async obtenerDatos(): Promise&lt;void&gt; {
+    await Promise.all([
+      this.obtenerEdificios(),
+      this.obtenerPisos(),
+      this.obtenerSectores(),
+      this.obtenerUbicaciones(),
+      this.obtenerActivosConTareas(),
+    ]);
+  }
+
+  goBack() {
+    this.router.navigate([&#x27;/dashboard-admin&#x27;]);
+  }
+
+  async obtenerEdificios(): Promise&lt;void&gt; {
+    try {
+      this.edificios &#x3D; await this.edificioService.obtenerEdificios();
+    } catch (error) {
+      console.error(&#x27;Error al obtener edificios:&#x27;, error);
+      this.edificios &#x3D; [];
+    }
+  }
+
+  async obtenerPisos(): Promise&lt;void&gt; {
+    try {
+      this.pisos &#x3D; await this.pisoService.obtenerPisos();
+    } catch (error) {
+      console.error(&#x27;Error al obtener pisos:&#x27;, error);
+      this.pisos &#x3D; [];
+    }
+  }
+
+  async obtenerSectores(): Promise&lt;void&gt; {
+    try {
+      this.sectores &#x3D; await this.sectorService.obtenerSectores();
+    } catch (error) {
+      console.error(&#x27;Error al obtener sectores:&#x27;, error);
+      this.sectores &#x3D; [];
+    }
+  }
+
+  async obtenerUbicaciones(): Promise&lt;void&gt; {
+    try {
+      this.ubicaciones &#x3D; await this.ubicacionService.obtenerUbicaciones();
+    } catch (error) {
+      console.error(&#x27;Error al obtener ubicaciones:&#x27;, error);
+      this.ubicaciones &#x3D; [];
+    }
+  }
+
+  async obtenerActivosConTareas(): Promise&lt;void&gt; {
+    try {
+      const relaciones &#x3D; await this.activoTareaService.obtenerTareas();
+      console.log(&#x27;Relaciones obtenidas:&#x27;, relaciones);
+
+      if (!relaciones || relaciones.length &#x3D;&#x3D;&#x3D; 0) {
+        throw new Error(&#x27;No hay relaciones activo-tarea disponibles&#x27;);
+      }
+
+      const activosConTareas: any[] &#x3D; [];
+      relaciones.forEach((rel) &#x3D;&gt; {
+        const existente &#x3D; activosConTareas.find((act) &#x3D;&gt; act.tipo &#x3D;&#x3D;&#x3D; rel.tipo);
+
+        if (existente) {
+          existente.tareas.push({ tarea: rel.tarea, id_tarea: rel.id_tarea });
+        } else {
+          activosConTareas.push({
+            tipo: rel.tipo,
+            tareas: [{ tarea: rel.tarea, id_tarea: rel.id_tarea }],
+          });
+        }
+      });
+
+      this.activos &#x3D; activosConTareas;
+      console.log(&#x27;Activos con tareas:&#x27;, this.activos);
+    } catch (error) {
+      console.error(&#x27;Error al obtener activos con tareas:&#x27;, error);
+      this.activos &#x3D; [];
+    }
+  }
+
+  getUniqueEdificios() {
+    const unique &#x3D; new Set(this.edificios.map((edificio) &#x3D;&gt; edificio.nombre));
+    return Array.from(unique).map((nombre) &#x3D;&gt;
+      this.edificios.find((edificio) &#x3D;&gt; edificio.nombre &#x3D;&#x3D;&#x3D; nombre)
+    );
+  }
+
+  getUniquePisos() {
+    const unique &#x3D; new Set(this.pisos.map((piso) &#x3D;&gt; piso.piso));
+    return Array.from(unique).map((piso) &#x3D;&gt;
+      this.pisos.find((p) &#x3D;&gt; p.piso &#x3D;&#x3D;&#x3D; piso)
+    );
+  }
+
+  getUniqueSectores() {
+    const unique &#x3D; new Set(this.sectores.map((sector) &#x3D;&gt; sector.sector));
+    return Array.from(unique).map((sector) &#x3D;&gt;
+      this.sectores.find((s) &#x3D;&gt; s.sector &#x3D;&#x3D;&#x3D; sector)
+    );
+  }
+
+  getUniqueUbicaciones() {
+    const unique &#x3D; new Set(
+      this.ubicaciones.map((ubicacion) &#x3D;&gt; ubicacion.ubicacion)
+    );
+    return Array.from(unique).map((ubicacion) &#x3D;&gt;
+      this.ubicaciones.find((u) &#x3D;&gt; u.ubicacion &#x3D;&#x3D;&#x3D; ubicacion)
+    );
+  }
+
+  onActivoChange(event: Event) {
+    const selectedTipo &#x3D; (event.target as HTMLSelectElement).value;
+    const activoSeleccionado &#x3D; this.activos.find(
+      (activo) &#x3D;&gt; activo.tipo &#x3D;&#x3D;&#x3D; selectedTipo
+    );
+
+    if (activoSeleccionado) {
+      this.tarea &#x3D; activoSeleccionado.tareas;
+      this.ordenTrabajo.activo_tarea &#x3D; &#x27;&#x27;;
+      console.log(&#x27;Tareas para el activo seleccionado:&#x27;, this.tarea);
+    }
+  }
+  onTareaChange(event: Event) {
+    const selectedTareaId &#x3D; (event.target as HTMLSelectElement).value;
+    console.log(&#x27;Tarea seleccionada:&#x27;, selectedTareaId);
+
+    this.ordenTrabajo.activo_tarea &#x3D; selectedTareaId;
+  }
+  async enviarSolicitud(): Promise&lt;void&gt; {
+    console.log(
+      &#x27;ID activo tarea antes de enviar:&#x27;,
+      this.ordenTrabajo.activo_tarea
+    );
+    console.log(&#x27;Datos a enviar:&#x27;, this.ordenTrabajo);
+
+    if (!this.ordenTrabajo.activo_tarea) {
+      console.error(&#x27;No se ha seleccionado ninguna tarea.&#x27;);
+      return;
+    }
+
+    try {
+      const response &#x3D; await this.ordenTrabajoService.crearOrdenTrabajo(
+        this.ordenTrabajo
+      );
+      console.log(&#x27;Orden de trabajo creada:&#x27;, response);
+      this.router.navigate([&#x27;/dashboard-admin&#x27;]);
+    } catch (error) {
+      console.error(&#x27;Error al crear la orden de trabajo:&#x27;, error);
+    }
+  }
+
+  onEdificioChange(event: any) {
+    this.ordenTrabajo.edificio &#x3D; Number(event.target.value);
+  }
+
+  onPisoChange(event: any) {
+    this.ordenTrabajo.piso &#x3D; Number(event.target.value);
+  }
+
+  onSectorChange(event: any) {
+    this.ordenTrabajo.sector &#x3D; String(event.target.value);
+  }
+
+  onUbicacionChange(event: any) {
+    this.ordenTrabajo.ubicacion &#x3D; String(event.target.value);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;generar-orden-container&quot;&gt;
+  &lt;div class&#x3D;&quot;form-header&quot;&gt;
+      &lt;div class&#x3D;&quot;back-arrow&quot; (click)&#x3D;&quot;goBack()&quot;&gt;
+          &lt;img src&#x3D;&quot;../../../assets/arrow.png&quot; alt&#x3D;&quot;Back&quot;&gt;
+        &lt;/div&gt;
+    &lt;div class&#x3D;&quot;form-title&quot;&gt;
+      &lt;h2&gt;Generar Orden de trabajo&lt;/h2&gt;
+      &lt;p&gt;Complete los siguientes datos para solicitar el trabajo&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;form-body&quot;&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;edificio&quot;&gt;Edificio:&lt;/label&gt;
+      &lt;select id&#x3D;&quot;edificio&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;ordenTrabajo.edificio&quot; (change)&#x3D;&quot;onEdificioChange($event)&quot;&gt;
+        &lt;option value&#x3D;&quot;&quot;&gt;Seleccione un edificio&lt;/option&gt;
+        &lt;option *ngFor&#x3D;&quot;let edificio of getUniqueEdificios()&quot; [value]&#x3D;&quot;edificio.id&quot;&gt;{{ edificio.nombre }}&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;piso&quot;&gt;Piso/Nivel:&lt;/label&gt;
+      &lt;select id&#x3D;&quot;piso&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;ordenTrabajo.piso&quot; (change)&#x3D;&quot;onPisoChange($event)&quot;&gt;
+        &lt;option value&#x3D;&quot;&quot;&gt;Seleccione un piso o nivel&lt;/option&gt;
+        &lt;option *ngFor&#x3D;&quot;let piso of getUniquePisos()&quot; [value]&#x3D;&quot;piso.id&quot;&gt;{{ piso.piso }}&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;sector&quot;&gt;Sector:&lt;/label&gt;
+      &lt;select id&#x3D;&quot;sector&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;ordenTrabajo.sector&quot; (change)&#x3D;&quot;onSectorChange($event)&quot;&gt;
+        &lt;option value&#x3D;&quot;&quot;&gt;Seleccione un sector&lt;/option&gt;
+        &lt;option *ngFor&#x3D;&quot;let sector of getUniqueSectores()&quot; [value]&#x3D;&quot;sector.id&quot;&gt;{{ sector.sector }}&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;ubicacion&quot;&gt;Ubicación:&lt;/label&gt;
+      &lt;select id&#x3D;&quot;ubicacion&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;ordenTrabajo.ubicacion&quot; (change)&#x3D;&quot;onUbicacionChange($event)&quot;&gt;
+        &lt;option value&#x3D;&quot;&quot;&gt;Seleccione una ubicación&lt;/option&gt;
+        &lt;option *ngFor&#x3D;&quot;let ubicacion of getUniqueUbicaciones()&quot; [value]&#x3D;&quot;ubicacion.id&quot;&gt;{{ ubicacion.ubicacion }}&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;tipoActivo&quot;&gt;Tipo de Activo:&lt;/label&gt;
+      &lt;select id&#x3D;&quot;tipoActivo&quot; class&#x3D;&quot;form-control&quot; (change)&#x3D;&quot;onActivoChange($event)&quot;&gt;
+        &lt;option value&#x3D;&quot;&quot;&gt;Seleccione un tipo de activo&lt;/option&gt;
+        &lt;option *ngFor&#x3D;&quot;let activo of activos&quot; [value]&#x3D;&quot;activo.tipo&quot;&gt;{{ activo.tipo }}&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label&gt;Tarea asociada:&lt;/label&gt;
+      &lt;select id&#x3D;&quot;tarea&quot; class&#x3D;&quot;form-control&quot;  (change)&#x3D;&quot;onTareaChange($event)&quot;&gt;
+        &lt;option *ngFor&#x3D;&quot;let tarea of tarea&quot; [value]&#x3D;&quot;tarea.id_tarea&quot;&gt;{{ tarea.tarea }}&lt;/option&gt;
+    
+      &lt;/select&gt;
+      
+    &lt;/div&gt;
+
+    &lt;button class&#x3D;&quot;submit-button&quot; (click)&#x3D;&quot;enviarSolicitud()&quot;&gt;Enviar Solicitud&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./orden-trabajo-form.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.generar-orden-container {
+  background-color: #EFF3F5;
+  border-radius: 10px;
+  width: 100%; 
+  max-width: 800px; 
+  height: auto;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: &#x27;Segoe UI&#x27;, Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background: linear-gradient(180deg, #A0C4FF 0%, #4D9DE0 100%);
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+
+.back-arrow {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 20px; 
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.back-arrow img {
+  width: 100%;
+  height: 100%;
+}
+
+.form-title {
+  flex-grow: 1; 
+  text-align: center; 
+}
+
+.form-title h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.form-title p {
+  font-size: 14px;
+  color: white;
+  margin: 5px 0 0;
+}
+
+.form-body {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 0 0 8px 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4D9DE0;
+}
+
+.submit-button {
+  background-color: #4D9DE0;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit-button:hover {
+  background-color: #3A7BAE;
+}
+
+
+@media (min-width: 768px) {
+  .generar-orden-container {
+    padding: 20px;
+  }
+  
+  .form-header {
+    padding: 15px;
+  }
+
+  .form-body {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-size: 16px;
+  }
+
+  .submit-button {
+    font-size: 16px;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="generar-orden-container">  <div class="form-header">      <div class="back-arrow" (click)="goBack()">          <img src="../../../assets/arrow.png" alt="Back">        </div>    <div class="form-title">      <h2>Generar Orden de trabajo</h2>      <p>Complete los siguientes datos para solicitar el trabajo</p>    </div>  </div>  <div class="form-body">    <div class="form-group">      <label for="edificio">Edificio:</label>      <select id="edificio" class="form-control" [(ngModel)]="ordenTrabajo.edificio" (change)="onEdificioChange($event)">        <option value="">Seleccione un edificio</option>        <option *ngFor="let edificio of getUniqueEdificios()" [value]="edificio.id">{{ edificio.nombre }}</option>      </select>    </div>    <div class="form-group">      <label for="piso">Piso/Nivel:</label>      <select id="piso" class="form-control" [(ngModel)]="ordenTrabajo.piso" (change)="onPisoChange($event)">        <option value="">Seleccione un piso o nivel</option>        <option *ngFor="let piso of getUniquePisos()" [value]="piso.id">{{ piso.piso }}</option>      </select>    </div>    <div class="form-group">      <label for="sector">Sector:</label>      <select id="sector" class="form-control" [(ngModel)]="ordenTrabajo.sector" (change)="onSectorChange($event)">        <option value="">Seleccione un sector</option>        <option *ngFor="let sector of getUniqueSectores()" [value]="sector.id">{{ sector.sector }}</option>      </select>    </div>    <div class="form-group">      <label for="ubicacion">Ubicación:</label>      <select id="ubicacion" class="form-control" [(ngModel)]="ordenTrabajo.ubicacion" (change)="onUbicacionChange($event)">        <option value="">Seleccione una ubicación</option>        <option *ngFor="let ubicacion of getUniqueUbicaciones()" [value]="ubicacion.id">{{ ubicacion.ubicacion }}</option>      </select>    </div>    <div class="form-group">      <label for="tipoActivo">Tipo de Activo:</label>      <select id="tipoActivo" class="form-control" (change)="onActivoChange($event)">        <option value="">Seleccione un tipo de activo</option>        <option *ngFor="let activo of activos" [value]="activo.tipo">{{ activo.tipo }}</option>      </select>    </div>    <div class="form-group">      <label>Tarea asociada:</label>      <select id="tarea" class="form-control"  (change)="onTareaChange($event)">        <option *ngFor="let tarea of tarea" [value]="tarea.id_tarea">{{ tarea.tarea }}</option>          </select>          </div>    <button class="submit-button" (click)="enviarSolicitud()">Enviar Solicitud</button>  </div></section></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardAdminComponent', 'selector': 'app-dashboard-admin'},{'name': 'DashboardOperarioComponent', 'selector': 'app-dashboard-operario'},{'name': 'HistorialComponent', 'selector': 'app-historial'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'OrdenTrabajoDetalleComponent', 'selector': 'app-orden-trabajo-detalle'},{'name': 'OrdenTrabajoFormComponent', 'selector': 'app-orden-trabajo-form'},{'name': 'RegistroComponent', 'selector': 'app-registro'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'OrdenTrabajoFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrdenTrabajoFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
