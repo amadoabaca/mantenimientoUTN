@@ -1,1 +1,63 @@
-<p>gestion-activos works!</p>
+<section class="container">
+    <div class="header">
+        <div class="back-arrow" (click)="goBack()">
+            <img src="../../../assets/arrow.png" alt="Back">
+        </div>
+        <div class="header-text">
+            <h2>Gestion de Activos</h2>
+        </div>
+    </div>
+
+    <div class="card-principal">
+        <div class="text-card-principal">
+            <h3>Nuevo Activo</h3>
+            <p>Completa los campos para generar un nuevo activo</p>
+
+            <div class="form-body">
+                <div class="form-group">
+                    <label for="edificio">Tipo de Activo:</label>
+                    <input id="edificio" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="piso">Codigo Unico:</label>
+                    <input id="edificio" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="sector">Tag:</label>
+                    <input id="edificio" class="form-control">
+                </div>
+                <button class="submit-button">Generar Activo</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-principal">
+        <div class="text-card-principal">
+            <h3>Lista de activos</h3>
+            <p>Selecciona un activo para modificarlo o eliminarlo</p>
+        </div>
+        
+        <div class="item">
+            <div class="info">
+              <p class="title">Iluminacion</p>
+              <small>ILUM</small>
+              <br>
+              <small>ILUM - 001003001001001 - 001</small>
+            </div>
+            <span class="delete">X</span>
+          </div>
+
+          <div class="item">
+            <div class="info">
+              <p class="title">Puerta</p>
+              <small>PRTA</small>
+              <br>
+              <small>PRTA - 001003003004001 - 002</small>
+            </div>
+            <span class="delete">X</span>
+          </div>
+
+    </div>
+</section>
