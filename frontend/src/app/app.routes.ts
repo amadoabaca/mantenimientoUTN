@@ -10,6 +10,10 @@ import { DashboardOperarioComponent } from './components/dashboard-operario/dash
 import { HistorialComponent } from './components/historial/historial.component';
 import { GestionComponent } from './components/gestion/gestion.component';
 import { GestionActivosComponent } from './components/gestion/gestion-activos/gestion-activos.component';
+import { GestionEdificiosComponent } from './components/gestion/gestion-edificios/gestion-edificios.component';
+import { GestionPisosComponent } from './components/gestion/gestion-pisos/gestion-pisos.component';
+import { GestionSectoresComponent } from './components/gestion/gestion-sectores/gestion-sectores.component';
+import { GestionUbicacionesComponent } from './components/gestion/gestion-ubicaciones/gestion-ubicaciones.component';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -33,6 +37,10 @@ export const routes: Routes = [
   { path: 'historial', component: HistorialComponent },
   { path: 'gestion', component: GestionComponent },
   { path: 'gestion-activos', component: GestionActivosComponent },
+  { path: 'gestion-edificios', component: GestionEdificiosComponent },
+  { path: 'gestion-pisos', component: GestionPisosComponent },
+  { path: 'gestion-sectores', component: GestionSectoresComponent },
+  { path: 'gestion-ubicaciones', component: GestionUbicacionesComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' },
 ];
