@@ -9,6 +9,7 @@ import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-
 import { DashboardOperarioComponent } from './components/dashboard-operario/dashboard-operario.component';
 import { HistorialComponent } from './components/historial/historial.component';
 import { GestionComponent } from './components/gestion/gestion.component';
+import { GestionActivosComponent } from './components/gestion/gestion-activos/gestion-activos.component';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -31,6 +32,7 @@ export const routes: Routes = [
   },
   { path: 'historial', component: HistorialComponent },
   { path: 'gestion', component: GestionComponent },
+  { path: 'gestion-activos', component: GestionActivosComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' },
 ];
