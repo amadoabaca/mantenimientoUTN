@@ -49,7 +49,60 @@ zone.js : ~0.14.10
 - `package.json`
 - `tsconfig.json`
 - `tsconfig.app.json`
+- 
+## Componentes
+- **AppComponent**
+  - Ruta: src/app/app.component.ts
+  - Selector: app-root
+  - Standalone: true
+  - Imports: RouterOutlet, CommonModule, LoginComponent
+- **DashboardAdminComponent**
+  - Ruta: src/app/components/dashboard-admin/dashboard-admin.component.ts
+  - Selector: app-dashboard-admin
+  - Standalone: true
+- **DashboardOperarioComponent**
+  - Ruta: src/app/components/dashboard-operario/dashboard-operario.component.ts
+  - Selector: app-dashboard-operario
+  - Standalone: true
+  - Imports: CommonModule
+- **HistorialComponent**
+  - Ruta: src/app/components/historial/historial.component.ts
+  - Selector: app-historial
+  - Standalone: true
+  - Imports: CommonModule, FormsModule
+- **LoginComponent**
+  - Ruta: src/app/components/login/login.component.ts
+  - Selector: app-login
+  - Standalone: true
+- **LoginFormComponent**
+  - Ruta: src/app/components/login-form/login-form.component.ts
+  - Selector: app-login-form
+  - Standalone: true
+  - Imports: CommonModule, FormsModule
+- **OrdenTrabajoDetalleComponent**
+  - Ruta: src/app/components/orden-trabajo/orden-trabajo.component.ts
+  - Selector: app-orden-trabajo-detalle
+  - Standalone: false
+- **OrdenTrabajoFormComponent**
+  - Ruta: src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts
+  - Selector: app-orden-trabajo-form
+  - Standalone: true
+  - Imports: FormsModule CommonModule
+- **RegistroComponent**
+  - Ruta: src/app/components/registro/registro.component.ts
+  - Selector: app-registro
+  - Standalone: true
+  - Imports: FormsModule CommonModule
 
+## Servicios
+- ****
+
+## Guards
+- **AuthGuard**
+  - Ruta: src/app/guards/auth.guard.ts
+
+## Interfaces
+-
 
 # ¿Como usar el sistema?
 
