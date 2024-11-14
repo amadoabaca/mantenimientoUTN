@@ -49,7 +49,7 @@ zone.js : ~0.14.10
 - `package.json`
 - `tsconfig.json`
 - `tsconfig.app.json`
-- 
+  
 ## Componentes
 - **AppComponent**
   - Ruta: src/app/app.component.ts
@@ -93,6 +93,12 @@ zone.js : ~0.14.10
   - Selector: app-registro
   - Standalone: true
   - Imports: FormsModule CommonModule
+- **GestionComponent**
+  - Ruta: src/app/components/gestion/gestion.component.ts
+  - Selector: app-gestion
+  - Standalone: true
+ 
+
 
 ## Servicios
 - ****
