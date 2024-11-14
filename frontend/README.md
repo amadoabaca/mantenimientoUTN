@@ -56,47 +56,57 @@ zone.js : ~0.14.10
   - Selector: app-root
   - Standalone: true
   - Imports: RouterOutlet, CommonModule, LoginComponent
+  - Funcion: Componente principal
 - **DashboardAdminComponent**
   - Ruta: src/app/components/dashboard-admin/dashboard-admin.component.ts
   - Selector: app-dashboard-admin
   - Standalone: true
+  - Funcion: Panel de control del administrador
 - **DashboardOperarioComponent**
   - Ruta: src/app/components/dashboard-operario/dashboard-operario.component.ts
   - Selector: app-dashboard-operario
   - Standalone: true
   - Imports: CommonModule
+  - Funcion: Panel de control del operario
 - **HistorialComponent**
   - Ruta: src/app/components/historial/historial.component.ts
   - Selector: app-historial
   - Standalone: true
   - Imports: CommonModule, FormsModule
+  - Funcion: Mostrar historial de ordenes de trabajo
 - **LoginComponent**
   - Ruta: src/app/components/login/login.component.ts
   - Selector: app-login
   - Standalone: true
+  - Funcion: Pagina principal del sistema
 - **LoginFormComponent**
   - Ruta: src/app/components/login-form/login-form.component.ts
   - Selector: app-login-form
   - Standalone: true
   - Imports: CommonModule, FormsModule
+  - Funcion: Formulario de login
 - **OrdenTrabajoDetalleComponent**
   - Ruta: src/app/components/orden-trabajo/orden-trabajo.component.ts
   - Selector: app-orden-trabajo-detalle
   - Standalone: false
+  - Funcion: Detalle de una orden de trabajo
 - **OrdenTrabajoFormComponent**
   - Ruta: src/app/components/orden-trabajo-form/orden-trabajo-form.component.ts
   - Selector: app-orden-trabajo-form
   - Standalone: true
   - Imports: FormsModule CommonModule
+  - Funcion: Formulario para cargar una orden de trabajo
 - **RegistroComponent**
   - Ruta: src/app/components/registro/registro.component.ts
   - Selector: app-registro
   - Standalone: true
   - Imports: FormsModule CommonModule
+  - Funcion: Formulario de registro
 - **GestionComponent**
   - Ruta: src/app/components/gestion/gestion.component.ts
   - Selector: app-gestion
   - Standalone: true
+  - Funcion: Panel para gestionar activos, edificios, pisos, sectores y ubicaciones
  
 
 
@@ -108,7 +118,7 @@ zone.js : ~0.14.10
   - Ruta: src/app/guards/auth.guard.ts
 
 ## Interfaces
--
+- ****
 
 # ¿Como usar el sistema?
 
