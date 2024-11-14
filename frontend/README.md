@@ -111,14 +111,132 @@ zone.js : ~0.14.10
 
 
 ## Servicios
-- ****
-
+- **ActivoService**
+  - Ruta: src/app/services/activo.service.ts
+  - Endpoint: /api/activos
+- **ActivoTareaService**
+  - Ruta: src/app/services/activo-tarea.service.ts
+  - Endpoint: /api/activoTareas
+- **AuthService**
+  - Ruta: src/app/services/auth.service.ts
+  - Endpoint: /api/login - api/register
+- **EdificioService**
+  - Ruta: src/app/services/edificio.service.ts
+  - Endpoints: /api/lista-edificios
+- **OrdenTrabajoService**
+  - Ruta: src/app/services/orden-trabajo.service.ts
+  - Endpoint: api/orden-trabajo
+- **PisoService**
+  - Ruta: src/app/services/piso.service.ts
+  - Endpoint: /api/lista-pisos
+- **SectorService**
+  - Ruta: src/app/services/sector.service.ts
+  - Endpoint: /api/sectores
+- **TareaService**
+  - Ruta: src/app/services/tarea.service.ts
+  - Endpoint: /api/tareas
+- **UbicacionService**
+  - Ruta: src/app/services/ubicacion.service.ts
+  - Endpoint: /api/lista-ubi-activos
+- **UserService**
+  - Ruta: src/app/services/user.service.ts
+  - Endpoints: /api/lista-usuarios - /api/operarios
+ 
+    
 ## Guards
 - **AuthGuard**
   - Ruta: src/app/guards/auth.guard.ts
 
 ## Interfaces
-- ****
+- **ActivoTarea**
+```bash
+    id_activo:string,
+    id_tarea: string; 
+    tipo: string; 
+    tarea: string; 
+```
+- **Activo**
+```bash
+  id_activo: string;
+  tipo: string;
+  tag_diminutivo: string;
+  label_tag: string;
+```
+- **Edificio**
+```bash
+  id_edificio?: number;
+  nombre: string;
+  label_tag: string;
+  direccion: string;
+```
+- **OrdenTrabajoBackend**
+```bash
+    orden_trabajo_id: number;
+    usuario_nombre: string;
+    sector_nombre: string;
+    edificio_nombre: string;
+    ubicacion_nombre: string;
+    piso_nombre: string;
+    tarea_descripcion: string;
+    activo_tipo: string;
+```
+- **OrdenTrabajo**
+```bash
+  orden_trabajo_id: number;
+  operario: string;
+  nombre: string;
+  fecha: string;
+  sector: string;
+  edificio: number;
+  activo: string;
+  activo_tipo?: string;
+  ubicacion: string;
+  piso: number;
+  tipoActivo: string;
+  solicitante: string;
+  instrucciones: string;
+  activo_tarea: string;
+  activo_tag?: string;
+  edificio_nombre?: string;
+  piso_nombre?: string;
+  sector_nombre?: string;
+  ubicacion_nombre?: string;
+  numero_tipo?: number;
+```
+- **Piso**
+```bash
+  id_piso?: number;
+  piso: string;
+  label_tag: string;
+```
+- **Sector**
+```bash
+  id_sector?: number;
+  sector: string;
+  label_tag: number;
+```
+- **Tarea**
+```bash
+    id_tarea: number;
+    tarea: string;
+    descripcion: string;
+    operario_id: number;
+```
+- **UbicacionActivo**
+```bash
+    id_ubicacion_activo: number;
+    ubicacion: string;
+    label_tag: string;
+```
+- **User**
+```bash
+    id_user: number;
+    nombre: string;
+    area: string;
+    email: string;
+    contraseña: string;
+    apellido: string;
+```
 
 # ¿Como usar el sistema?
 
