@@ -3,12 +3,16 @@
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 18.2.7.
 
 ## Configuracion inicial
+
 Inicializar el servidor
+
 ```bash
 npm install
 ng serve
 ```
+
 Dependencias
+
 ```bash
 @angular/animations : ^18.2.0
 @angular/common : ^18.2.0
@@ -26,7 +30,9 @@ rxjs : ~7.8.0
 tslib : ^2.3.0
 zone.js : ~0.14.10
 ```
+
 ## Estructura del Proyecto
+
 - `public/`
 - `src/`
   - `app/`
@@ -49,8 +55,9 @@ zone.js : ~0.14.10
 - `package.json`
 - `tsconfig.json`
 - `tsconfig.app.json`
-  
+
 ## Componentes
+
 - **AppComponent**
   - Ruta: src/app/app.component.ts
   - Selector: app-root
@@ -107,10 +114,9 @@ zone.js : ~0.14.10
   - Selector: app-gestion
   - Standalone: true
   - Funcion: Panel para gestionar activos, edificios, pisos, sectores y ubicaciones
- 
-
 
 ## Servicios
+
 - **ActivoService**
   - Ruta: src/app/services/activo.service.ts
   - Endpoint: /api/activos
@@ -141,35 +147,63 @@ zone.js : ~0.14.10
 - **UserService**
   - Ruta: src/app/services/user.service.ts
   - Endpoints: /api/lista-usuarios - /api/operarios
- 
-    
+
 ## Guards
+
 - **AuthGuard**
   - Ruta: src/app/guards/auth.guard.ts
 
 ## Interfaces
+
 - **ActivoTarea**
+
 ```bash
     id_activo:string,
-    id_tarea: string; 
-    tipo: string; 
-    tarea: string; 
+    id_tarea: string;
+    tipo: string;
+    tarea: string;
 ```
+
 - **Activo**
+
 ```bash
   id_activo: string;
   tipo: string;
   tag_diminutivo: string;
-  label_tag: string;
 ```
+
+- **AuthResponse**
+
+```bash
+  token: string;
+  area: string;
+```
+
 - **Edificio**
+
 ```bash
   id_edificio?: number;
   nombre: string;
   label_tag: string;
   direccion: string;
 ```
+
+- **LoginCredentials**
+
+```bash
+  email: string;
+  contraseña: string;
+```
+
+- **NuevoActivo**
+
+```bash
+  tipo: string;
+  tag_diminutivo: string;
+```
+
 - **OrdenTrabajoBackend**
+
 ```bash
     orden_trabajo_id: number;
     usuario_nombre: string;
@@ -180,67 +214,66 @@ zone.js : ~0.14.10
     tarea_descripcion: string;
     activo_tipo: string;
 ```
+
 - **OrdenTrabajo**
+
 ```bash
-  orden_trabajo_id: number;
+  id: number;
   operario: string;
-  nombre: string;
-  fecha: string;
   sector: string;
-  edificio: number;
-  activo: string;
-  activo_tipo?: string;
+  edificio: string;
   ubicacion: string;
-  piso: number;
-  tipoActivo: string;
-  solicitante: string;
-  instrucciones: string;
-  activo_tarea: string;
-  activo_tag?: string;
-  edificio_nombre?: string;
-  piso_nombre?: string;
-  sector_nombre?: string;
-  ubicacion_nombre?: string;
-  numero_tipo?: number;
+  piso: string;
+  id_activo_tarea: string;
+  id_activo?: string;
 ```
+
 - **Piso**
+
 ```bash
   id_piso?: number;
   piso: string;
   label_tag: string;
 ```
+
 - **Sector**
+
 ```bash
   id_sector?: number;
   sector: string;
   label_tag: number;
 ```
+
 - **Tarea**
+
 ```bash
-    id_tarea: number;
-    tarea: string;
-    descripcion: string;
-    operario_id: number;
+  id_tarea: string;
+  tarea: string;
 ```
+
 - **UbicacionActivo**
+
 ```bash
-    id_ubicacion_activo: number;
-    ubicacion: string;
-    label_tag: string;
+  idubicacion_activo: number;
+  ubicacion: string;
+  label_tag: string;
 ```
+
 - **User**
+
 ```bash
-    id_user: number;
-    nombre: string;
-    area: string;
-    email: string;
-    contraseña: string;
-    apellido: string;
+  id_usuario: string;
+  nombre: string;
+  area: string;
+  email: string;
+  contraseña: string;
+  apellido: string;
 ```
 
 # ¿Como usar el sistema?
 
 ## Seleccionar un perfil para ingresar
+
 <p align="left">
   Elige el perfil asignado para acceder al sistema.
 </p>
@@ -250,6 +283,7 @@ zone.js : ~0.14.10
 ---
 
 ## Ingresar usuario y contraseña
+
 <p align="left">
   Ingresa tus credenciales (usuario y contraseña) para autenticarse en el sistema.
 </p>
@@ -259,6 +293,7 @@ zone.js : ~0.14.10
 ---
 
 ## Panel de control operario
+
 <p align="left">
   Una vez autenticado, los operarios tienen acceso a un panel personalizado que les permite gestionar sus ordenes de trabajo.
 </p>
@@ -268,6 +303,7 @@ zone.js : ~0.14.10
 ---
 
 ## Panel de control administrador
+
 <p align="left">
   Los administradores tienen acceso a un panel avanzado con opciones para gestionar usuarios, solicitudes y ver el historial de OT.
 </p>
@@ -277,6 +313,7 @@ zone.js : ~0.14.10
 ---
 
 ## 1. Solicitar orden de trabajo
+
 <p align="left">
   Los operarios pueden solicitar una orden de trabajo a través de un formulario.
 </p>
@@ -286,6 +323,7 @@ zone.js : ~0.14.10
 ---
 
 ## 2. Registrar usuario
+
 <p align="left">
   Los administradores tienen la posibilidad de registrar nuevos usuarios en el sistema mediante un formulario de registro.
 </p>
@@ -295,6 +333,7 @@ zone.js : ~0.14.10
 ---
 
 ## 3. Ver el historial de órdenes de trabajo
+
 <p align="left">
   Consulta el historial de órdenes de trabajo para obtener información sobre tareas anteriores.
 </p>
@@ -304,10 +343,9 @@ zone.js : ~0.14.10
 ---
 
 ## 4. Visualizar la orden de trabajo
+
 <p align="left">
   Detalle de una orden de trabajo específica.
 </p>
 
 ![Ver OT](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/6-orden-trabajo.png)
-
-
