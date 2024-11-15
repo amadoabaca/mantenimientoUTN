@@ -20,10 +20,10 @@
         <p>Mis Ordenes de Trabajo</p>
       </div>
     
-      <div *ngFor="let orden of ordenesTrabajo" class="solicitud-item" (click)="navigateToOT(orden.orden_trabajo_id)">
+      <div *ngFor="let orden of listaOrdenes" class="solicitud-item" (click)="navigateToOT(orden.orden_trabajo_id)">
         <div class="solicitud-info">
           <h4 class="solicitud-title">{{ orden.activo_tipo || 'Nombre de la Tarea' }}</h4>
-          <small>{{ orden.sector_nombre || orden.sector }} - Piso: {{ orden.piso_nombre || orden.piso }}</small>
+          <small>Sector-{{ orden.sector_nombre }} - Piso: {{ orden.piso_nombre  }}</small>
         </div>
         <span class="solicitud-id">#{{ orden.orden_trabajo_id }}</span>
       </div>
@@ -32,3 +32,7 @@
     </div>
     
 </section>
+
+  
+
+

@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { UbicacionActivo } from '../interfaces/ubicacion';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UbicacionService {
-
-  private apiUrl = 'http://localhost:3000/api/lista-ubi-activos'; 
+  private apiUrl = 'http://localhost:3000/api/lista-ubi-activos';
 
   constructor() {}
 
@@ -21,13 +20,14 @@ export class UbicacionService {
 
     if (!response.ok) {
       const errorResponse = await response.json();
-      throw new Error(errorResponse.error || 'Error al crear la ubicación de activo');
+      throw new Error(
+        errorResponse.error || 'Error al crear la ubicación de activo'
+      );
     }
 
     return await response.json();
   }
 
-  
   async obtenerUbicaciones(): Promise<UbicacionActivo[]> {
     const response = await fetch(this.apiUrl, {
       method: 'GET',
@@ -38,7 +38,9 @@ export class UbicacionService {
 
     if (!response.ok) {
       const errorResponse = await response.json();
-      throw new Error(errorResponse.error || 'Error al obtener ubicaciones de activos');
+      throw new Error(
+        errorResponse.error || 'Error al obtener ubicaciones de activos'
+      );
     }
 
     return await response.json();

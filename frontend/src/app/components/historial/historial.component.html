@@ -38,7 +38,8 @@
     <div *ngIf="listaOrdenes.length > 0; else noOrders">
       <div class="solicitud-item" *ngFor="let ot of listaOrdenes">
         <div class="solicitud-info">
-          <p class="solicitud-title">{{ ot.activo_tipo }} - {{ ot.descripcion_tarea }}</p>
+          <p class="solicitud-title">{{ ot.activo_tipo }}</p>
+          <small>Tarea: {{ ot.tarea_descripcion }}</small>
           <small>Ubicación: {{ ot.ubicacion_nombre }}</small>
           <small>Edificio: {{ ot.edificio_nombre }}</small>
           <small>Piso: {{ ot.piso_nombre }}</small>

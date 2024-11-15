@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Tarea } from '../interfaces/tarea';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TareaService {
-
-  private apiUrl = 'http://localhost:3000/api/tareas'; 
+  private apiUrl = 'http://localhost:3000/api/tareas';
 
   constructor() {}
 
@@ -27,7 +26,6 @@ export class TareaService {
     return await response.json();
   }
 
-  
   async obtenerTareas(): Promise<Tarea[]> {
     const response = await fetch(this.apiUrl, {
       method: 'GET',

@@ -6,12 +6,14 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
   constructor(private router: Router) {}
 
   navigateToLoginForm(role: string, imageUrl: string) {
-    this.router.navigate(['/login-form'], { queryParams: { role, image: imageUrl } });
+    this.router.navigate(['/login-form'], {
+      queryParams: { role, image: imageUrl },
+    });
   }
 }

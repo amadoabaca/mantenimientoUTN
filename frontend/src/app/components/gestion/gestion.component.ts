@@ -18,20 +18,4 @@ export class GestionComponent {
   navigateToActivos() {
     this.router.navigate(['/gestion-activos']);
   }
-
-  navigateToPisos() {
-    this.router.navigate(['/gestion-pisos']);
-  }
-
-  navigateToEdificios() {
-    this.router.navigate(['/gestion-edificios']);
-  }
-
-  navigateToSectores() {
-    this.router.navigate(['/gestion-sectores']);
-  }
-
-  navigateToUbicaciones() {
-    this.router.navigate(['/gestion-ubicaciones']);
-  }
 }

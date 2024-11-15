@@ -40,30 +40,6 @@ export class OrdenTrabajoService {
 
     return await response.json();
   }
-
-  async getOrdenTrabajo(id: number): Promise<OrdenTrabajo> {
-    try {
-      const response = await fetch(`${this.apiUrl}/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        const errorResponse = await response.json();
-        throw new Error(
-          errorResponse.error || 'Error al acceder a la orden de trabajo'
-        );
-      }
-
-      return await response.json();
-    } catch (error) {
-      console.error('Error al acceder orden de trabajo:', error);
-      throw error;
-    }
-  }
-
   async getOrdenesTrabajoFiltradas(activo: string, operario: string) {
     const params = new URLSearchParams();
     if (activo) params.append('activo', activo);
@@ -117,8 +93,7 @@ export class OrdenTrabajoService {
       return [];
     }
   }
-
-  async deleteOrdenTrabajo(id: any): Promise<OrdenTrabajo> {
+  async deleteOrdenTrabajo(id: number): Promise<OrdenTrabajo> {
     const response = await fetch(`${this.apiUrl}/${id}`, {
       method: 'DELETE',
     });
@@ -131,7 +106,10 @@ export class OrdenTrabajoService {
     return await response.json();
   }
 
-  async updateOrdenTrabajo(id: any, ot: OrdenTrabajo): Promise<OrdenTrabajo> {
+  async updateOrdenTrabajo(
+    id: number,
+    ot: OrdenTrabajo
+  ): Promise<OrdenTrabajo> {
     const response = await fetch(`${this.apiUrl}/${id}`, {
       method: 'PATCH',
       headers: {

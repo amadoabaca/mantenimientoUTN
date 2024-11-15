@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Sector } from '../interfaces/sector';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SectorService {
-
-  private apiUrl = 'http://localhost:3000/api/sectores'; 
+  private apiUrl = 'http://localhost:3000/api/sectores';
 
   constructor() {}
 
@@ -27,7 +26,6 @@ export class SectorService {
     return await response.json();
   }
 
-  
   async obtenerSectores(): Promise<Sector[]> {
     const response = await fetch(this.apiUrl, {
       method: 'GET',

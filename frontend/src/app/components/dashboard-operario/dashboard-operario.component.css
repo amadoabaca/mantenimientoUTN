@@ -63,7 +63,6 @@
   margin-bottom: 20px;
 }
 
-/* Tabla estilizada */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -96,7 +95,6 @@ tbody tr:nth-child(even) {
   background-color: #f9fbfd;
 }
 
-/* Ajustes de responsividad */
 @media (min-width: 1200px) {
   .orden-trabajo-container {
     padding: 60px;

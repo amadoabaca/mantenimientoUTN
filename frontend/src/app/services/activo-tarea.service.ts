@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ActivoTarea } from '../interfaces/activo-tarea';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ActivoTareaService {
-
   private apiUrl = 'http://localhost:3000/api/activoTareas';
-
-
 
   constructor() {}
 
@@ -22,18 +19,21 @@ export class ActivoTareaService {
 
     if (!response.ok) {
       const errorResponse = await response.json();
-      throw new Error(errorResponse.error || 'No se pudo crear la relación activo-tarea');
+      throw new Error(
+        errorResponse.error || 'No se pudo crear la relación activo-tarea'
+      );
     }
 
     return await response.json();
   }
-  
-  async obtenerTareas(idActivo?: string, tipoActivo?: string): Promise<ActivoTarea[]> {
+
+  async obtenerTareas(
+    idActivo?: string,
+    tipoActivo?: string
+  ): Promise<ActivoTarea[]> {
     let url = this.apiUrl;
 
-    
     if (idActivo) {
-    
       url = `${this.apiUrl}/${idActivo}`;
     } else if (tipoActivo) {
       url = `${this.apiUrl}?tipo_activo=${tipoActivo}`;
@@ -48,8 +48,14 @@ export class ActivoTareaService {
 
     if (!response.ok) {
       const errorResponse = await response.json();
-      console.error('Error al obtener las relaciones Activo-Tarea:', errorResponse);
-      throw new Error(errorResponse.error || 'No se pudieron obtener las relaciones Activo-Tarea');
+      console.error(
+        'Error al obtener las relaciones Activo-Tarea:',
+        errorResponse
+      );
+      throw new Error(
+        errorResponse.error ||
+          'No se pudieron obtener las relaciones Activo-Tarea'
+      );
     }
 
     return await response.json();
