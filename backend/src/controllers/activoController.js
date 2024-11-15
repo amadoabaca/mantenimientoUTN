@@ -24,44 +24,44 @@ export const ActivoId = async (req, res) => {
 };
 
 export const createActivo = async (req, res) => {
-  const { nombre, descripcion, sector_id } = req.body;
   try {
+    const { tipo, tag_diminutivo } = req.body;
+
+    if (!tipo || !tag_diminutivo) {
+      console.log('Faltan campos requeridos');
+      return res.status(400).json({ error: 'Los campos tipo y tag_diminutivo son obligatorios' });
+    }
+
+    console.log('Datos recibidos para crear activo:', { tipo, tag_diminutivo });
+
     const [result] = await pool.query(
-      'INSERT INTO Activo (tipo, tag_diminutivo, label_tag) VALUES (?, ?, ?)',
-      [tipo, tag_diminutivo, label_tag]
+      'INSERT INTO Activo (tipo, tag_diminutivo) VALUES (?, ?)',
+      [tipo, tag_diminutivo|| null]
     );
-    res.status(201).json({ message: 'Activo creado', id: result.insertId });
+
+    console.log('Resultado de la inserción:', result); 
+    return res.status(201).json({ message: 'Activo creado', id: result.insertId });
   } catch (error) {
-    res.status(500).json({ error: 'Error al crear el activo' });
+    console.error('Error al crear el activo:', error);
+    return res.status(500).json({ error: 'Error al crear el activo', details: error.message });
   }
 };
 
-export const updateActivoById = async (req, res) => {
-  const { id } = req.params;
-  const { tipo, tag_diminutivo, label_tag } = req.body;
-  try {
-    const [result] = await pool.query(
-      'UPDATE Activo SET tipo = ?, tag_diminutivo = ?, label_tag = ? WHERE id_activo = ?',
-      [tipo, tag_diminutivo, label_tag, id_activo]
-    );
-    if (result.affectedRows === 0) {
-      return res.status(404).json({ error: 'Activo no encontrado' });
-    }
-    res.json({ message: 'Activo actualizado' });
-  } catch (error) {
-    res.status(500).json({ error: 'Error al actualizar el activo' });
-  }
-};
 
 export const deleteActivoById = async (req, res) => {
   const { id } = req.params;
   try {
+
+    await pool.query('DELETE FROM activo_tarea WHERE id_activo = ?', [id]);
+
     const [result] = await pool.query('DELETE FROM Activo WHERE id_activo = ?', [id]);
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'Activo no encontrado' });
     }
     res.json({ message: 'Activo eliminado' });
   } catch (error) {
-    res.status(500).json({ error: 'Error al eliminar el activo' });
+    console.error('Error al eliminar el activo:', error);
+    res.status(500).json({ error: 'Error al eliminar el activo', details: error.message });
   }
 };
+

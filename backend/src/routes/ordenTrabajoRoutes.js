@@ -23,3 +23,4 @@ router.get('/orden-trabajo/:id', getOrdenTrabajoById);
 router.get('/orden-trabajo/operario', getOrdenesTrabajoPorOperario); 
 router.get('/orden-trabajo-filtrada', getOrdenesTrabajoFiltradas);
 export default router;
+

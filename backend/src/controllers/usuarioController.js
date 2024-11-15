@@ -29,8 +29,6 @@ export const CrearUsuario = async (req, res) => {
     res.json({ error: 'Error al registrar usuario' });
   };
 }
-// usuarioController.js
-// usuarioController.js
 export const UsuarioLogin = async (req, res) => {
   const { email, contraseña } = req.body;
   if (!email || !contraseña) {
@@ -41,14 +39,17 @@ export const UsuarioLogin = async (req, res) => {
     if (results.length === 0 || !(await bcrypt.compare(contraseña, results[0].contraseña))) {
       return res.status(401).json({ error: 'Usuario y/o contraseña incorrectos' });
     }
-    
-    const token = jwt.sign({ id: results[0].id_usuario, email: results[0].email }, SECRET_KEY, { expiresIn: '2h' });
-    res.json({ token });  // Asegúrate de enviar un objeto con 'token'
+
+    // Incluye el área en el token
+    const token = jwt.sign({ id: results[0].id_usuario, email: results[0].email, area: results[0].area }, SECRET_KEY, { expiresIn: '2h' });
+
+    res.json({ token });  // Envía el token como respuesta
   } catch (err) {
     console.error('Error al iniciar sesión:', err);
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }
 };
+
 
 export const getOperarios = async (req, res) => {
   try {

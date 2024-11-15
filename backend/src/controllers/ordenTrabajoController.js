@@ -28,33 +28,23 @@ export const getOrdenTrabajoById = async (req, res) => {
 
 
 export const createOrdenTrabajo = async (req, res) => {
-  const {operario, sector, edificio, ubicacion, piso, activo_tarea } = req.body;
-  if (!operario || !edificio || !piso || !sector || !ubicacion || !activo_tarea) {
+  const { operario, sector, edificio, ubicacion, piso, id_activo_tarea } = req.body;
+
+  console.log('Datos recibidos en la solicitud:', req.body);
+
+  if (!operario || !edificio || !piso || !sector || !ubicacion || !id_activo_tarea) {
     return res.status(400).json({ error: 'Todos los campos son requeridos' });
   }
 
-  
-  if (!Array.isArray(activo_tarea) || activo_tarea.length === 0) {
-    return res.status(400).json({ error: 'Las tareas activas son requeridas y deben ser un arreglo no vacío' });
-  }
-
-  
-
-
   try {
-    
     const [result] = await pool.query(
       `INSERT INTO orden_trabajo 
-        (id_sector, id_edificio, id_ubicacion_activo, id_piso) 
-        VALUES (?, ?, ?, ?)`,
-      [sector, edificio, ubicacion, piso]
+        (id_sector, id_edificio, id_ubicacion_activo, id_piso, id_activo_tarea, id_usuario) 
+        VALUES (?, ?, ?, ?, ?, ?)`,
+      [sector, edificio, ubicacion, piso, id_activo_tarea, operario]
     );
 
-  
-   
-
     res.status(201).json({ message: 'Orden de trabajo creada con éxito', id: result.insertId });
-    console.log(req.body);
   } catch (err) {
     console.error('Error al crear la orden de trabajo:', err);
     res.status(500).json({ error: 'Error al crear la orden de trabajo' });
@@ -130,7 +120,7 @@ export const getOrdenesTrabajoDetalladas = async (req, res) => {
         t.tarea AS tarea_descripcion,
         e.nombre AS edificio_nombre,
         p.piso AS piso_nombre,
-       
+       u.nombre AS usuario_nombre,
         s.sector AS sector_nombre,
         ua.ubicacion AS ubicacion_nombre
        
@@ -146,15 +136,16 @@ export const getOrdenesTrabajoDetalladas = async (req, res) => {
         edificio e ON ot.id_edificio = e.id_edificio
       JOIN 
         piso p ON ot.id_piso = p.id_piso
-  
+        JOIN
+   usuario u ON ot.id_usuario = u.id_usuario
       JOIN 
         sector s ON ot.id_sector = s.id_sector
       JOIN 
         ubicacion_activo ua ON ot.id_ubicacion_activo = ua.idubicacion_activo
   `;
 
-    
-      const [rows] = await pool.query(query); // Asegúrate de que rows se extrae correctamente
+ 
+      const [rows] = await pool.query(query);
       res.json(rows);
 
     
@@ -203,17 +194,17 @@ export const getOrdenesTrabajoPorOperario = async (req, res) => {
     `;
     const [rows] = await pool.query(query);
     res.json(rows);
+  
   } catch (error) {
     console.error('Error al obtener las órdenes de trabajo para operarios:', error);
     res.status(500).json({ error: 'Error al obtener las órdenes de trabajo para operarios' });
   }
 };
-// ordenTrabajoController.js
+
 export const getOrdenesTrabajoFiltradas = async (req, res) => {
   const { activo, operario } = req.query;
   console.log('Parámetros recibidos:', { activo, operario });
   
-
   let query = `  
       SELECT 
         ot.idorden_trabajo AS orden_trabajo_id, 
@@ -259,9 +250,9 @@ export const getOrdenesTrabajoFiltradas = async (req, res) => {
 
   try {
     const [rows] = await pool.query(query, params);
-
+  
     if (rows.length === 0) {
-      // Devuelve un error solo si no se encuentran registros
+  
       return res.status(404).json({ error: 'No se encontraron órdenes de trabajo con los filtros especificados' });
     }
 

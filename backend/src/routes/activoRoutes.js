@@ -1,12 +1,11 @@
 import { Router } from 'express';
-import { Activos, ActivoId, deleteActivoById, createActivo, updateActivoById } from '../controllers/activoController.js';
+import { Activos, ActivoId, deleteActivoById, createActivo } from '../controllers/activoController.js';
 
 const router = Router();
 
-router.get('/activos', Activos);
-router.get('/activo', ActivoId);
-router.delete('/activo', deleteActivoById);
-router.post('/activo', createActivo);
-router.put('/activo', updateActivoById);
-
+router.get('/activos', Activos);            
+router.get('/activos/:id', ActivoId);         
+router.delete('/activos/:id', deleteActivoById); 
+router.post('/activos', createActivo);         
 export default router;
+

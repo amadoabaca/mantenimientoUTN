@@ -10,3 +10,4 @@ router.post('/ubi-activo', createUbicacionActivo);
 router.put('/ubi-activo', updateUbicacionActivoById);
 
 export default router;
+

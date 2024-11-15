@@ -24,11 +24,11 @@ export const EdificioId = async (req, res) => {
 };
 
 export const createEdificio = async (req, res) => {
-  const { nombre, direccion, label_tag } = req.body; 
+  const { nombre, direccion } = req.body; 
   try {
     const [result] = await pool.query(
-      'INSERT INTO Edificio (nombre, direccion, label_tag) VALUES (?, ?, ?)',
-      [nombre, direccion, label_tag]
+      'INSERT INTO Edificio (nombre, direccion) VALUES (?, ?, ?)',
+      [nombre, direccion]
     );
     res.status(201).json({ message: 'Edificio creado', id: result.insertId });
   } catch (error) {
@@ -36,22 +36,6 @@ export const createEdificio = async (req, res) => {
   }
 };
 
-export const updateEdificioById = async (req, res) => {
-  const { id } = req.params;
-  const { nombre, direccion, label_tag } = req.body; 
-  try {
-    const [result] = await pool.query(
-      'UPDATE Edificio SET nombre = ?, direccion = ?, label_tag = ? WHERE id = ?',
-      [nombre, direccion, label_tag, id]
-    );
-    if (result.affectedRows === 0) {
-      return res.status(404).json({ error: 'Edificio no encontrado' });
-    }
-    res.json({ message: 'Edificio actualizado' });
-  } catch (error) {
-    res.status(500).json({ error: 'Error al actualizar el edificio' });
-  }
-};
 
 
 export const deleteEdificioById = async (req, res) => {
